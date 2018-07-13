@@ -1,0 +1,18 @@
+---
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+### Undergraduate
+My bachelor's degree was a BA in economics, which I proudly received from
+[U.C. Berkeley's economics department](https://www.econ.berkeley.edu/).
+For my honors thesis, I examined a quasi-experiment by which we could infer
+the [causal effect of sports participation on NCAA D1 student-athlete GPA's](http://econ.berkeley.edu/sites/default/files/Santucci.pdf) at the university.
+I was supervised by [Gregory Duncan](https://econ.washington.edu/news/2014/03/21/amazon-principal-economist-and-affiliate-professor-greg-duncan-introduces-machine) and [Charlie Gibbons](http://gibbons.bio/), to whom I am indebted for inspiring my passion for this field.
+
+### Graduate 
+Inspired to learn more about the mathematical underpinnings of the models I was using, I pursued an M.S. at Stanford's [Institute for Computational and Mathematical Engineering](https://icme.stanford.edu/). At Stanford, I spent the first few quarters studying systems programming, discrete math, and stochastic processes with voracious appetite for learning. The second half of my program was spent as a Teaching Fellow; I wrote an AutoGrader to facilitate the programmatic grading of student submissions for ICME's core programming courses, and also helped teach courses in [discrete math and (distributed) algorithms](https://stanford.edu/~rezab/classes/cme305/W17/). In addition, I passed qualifying exams in both stochastic processes and discrete math and algorithms. In my last year, I worked with [Guido Imbens](https://www.gsb.stanford.edu/faculty-research/faculty/guido-w-imbens) on a quasi-experiment by which we were able to infer the causal effect of nightlife visitation on subsequent day sporting performance in professional sports. These "hangover effects" were not only statistically significant, but also earned a profit under historical simulation of the marketplace.

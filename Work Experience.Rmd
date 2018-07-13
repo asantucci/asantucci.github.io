@@ -1,0 +1,21 @@
+---
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+### Research Analyst
+I worked for several years as a Research Analyst with [*The Brattle Group*](http://www.brattle.com/), where I became passionate about computing in R.
+I worked closely with [Armando Levy](http://www.brattle.com/experts/armando-levy) to
+estimate the damages from lost human use of select natural resources used for recreation,
+for the purpose of supporting the expert testimony of [Dan Mcfadden](https://eml.berkeley.edu/~mcfadden/). Along the way, I authored a sequence of 
+over a half-dozen R presentations, informing RA's of more efficient ways to tackle their daily workflow; the content led to presentations such as [a how to on regular expressions](/Users/asantucci_cardinal/Dropbox/Stanford/Teaching/R/lecture_2_regex.pdf).
+
+### Computational Engineering Intern
+I also worked at [Lawrence Livermore National Laboratory](https://computation.llnl.gov/) for a summer, implementing distributed MCMC in Scala and Spark according to several different methods recently published, e.g. [Neiswanger et. al.](https://arxiv.org/abs/1311.4780).
+
+### Data Scientist
+As first data scientist at Cardinal, I have built out the core product(s), authoring the feature engineering and modeling packages. The main implications are expanding our feature set for each patient from 800 variables to over 80k, which improved model performance by 50% when combined with some more flexible machine learning models. I also dropped the memory footprint and compute time by orders of magnitude through use of sparse matrices and a mind toward performant algorithms. I've extended their models to work for arbitrary labeling functions, e.g. predicting a patient's risk profile or orthopedic joint surgeries; this helps us realize more value with new clients.

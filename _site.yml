@@ -1,0 +1,22 @@
+name: "Andreas Santucci"
+output_dir: "."
+navbar:
+  title: "Andreas Santucci"
+  left:
+    - text: "Education"
+      href: "Education.html"
+    - text: "Work Experience"
+      href: "Work_Experience.html"
+  right:
+    - icon: fa-envelope fa-lg
+      href: "mailto:santucci.andreas@gmail.com"
+    - icon: fa-github fa-lg
+      href: https://github.com/asantucci
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/andreassantucci
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/santucciandreas/
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'
