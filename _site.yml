@@ -7,6 +7,8 @@ navbar:
       href: "Education.html"
     - text: "Work Experience"
       href: "Work_Experience.html"
+    - text: "Teaching"
+      href: "Teaching.html"
   right:
     - icon: fa-envelope fa-lg
       href: "mailto:santucci.andreas@gmail.com"
