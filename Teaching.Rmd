@@ -1,16 +1,14 @@
 ---
-title: "Teaching"
-author: "Andreas Santucci"
 output: html_document
 ---
 
-# Why I Teach
+### Why I Teach
 I love to share my passion(s) with others. Education has been a cornerstone of my life and I strongly 
 believe in giving back to the community. What's better than having a lightbulb moment after spending hours
 thinking through a problem? Being able to create that same illumination within another student with 
 a concise explanation.
 
-# Sample Materials
+### Sample Materials
 I recently put together a few notes on an [Introduction to R Programming](files/Introduction_to_R_ICME_Short_Course_2018.pdf) for a one-day short course.
 Here's an example of some [distributed algorithms notes](files/cme323_lec5.pdf) I created for a course 
 I helped teach. I enjoy consolidating information into concise and digestable notes. For example, here's a course summary from my [first statistical inference course](files/stats_200_cs.pdf).
