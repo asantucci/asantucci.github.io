@@ -7,8 +7,14 @@ output:
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
+### Data Scientist (Algorithms)
+Excited to be joining Airbnb's Data Science team!
+
+### Statistical Consultant
+I'm passionate about statistics, and am always eager to help peers and colleagues with their work. Recently, I've been authoring the core statistical analyses for [Pando Pooling](https://www.pandopooling.com/), a startup aimed at pooling professional athletes together (with similar projected earnings) such that they may lower their individual career risk. We collected data on over fifty thousand professional baseball players, alongside their career earnings and player-statistics. These data are then used to construct models which estimate a player's (remaining) lifetime earnings, as well as the likelihood of making the Majors or reaching arbitration.
+
 ### Data Scientist
-As first data scientist at Cardinal, I have built out the core product(s), authoring the feature engineering and modeling packages. The main implications are expanding our feature set for each patient from 800 variables to over 80k, which improved model performance by 50% when combined with some more flexible machine learning models. I also dropped the memory footprint and compute time by orders of magnitude through use of sparse matrices and a mind toward performant algorithms. I've extended their models to work for arbitrary labeling functions, e.g. predicting a patient's risk profile or orthopedic joint surgeries; this helps us realize more value with new clients.
+As first "data scientist" at [Cardinal](http://cardinalanalytx.com/), I have built out the core product(s), authoring the feature engineering and modeling packages. The main implications are expanding our feature set for each patient from 800 variables to over 80k, which improved model performance by 50% when combined with some more flexible machine learning models. I also dropped the memory footprint and compute time by orders of magnitude through use of sparse matrices and a mind toward performant algorithms. I've extended their models to work for arbitrary labeling functions, e.g. predicting a patient's risk profile or orthopedic joint surgeries; this helps us realize more value with new clients.
 
 ### Computational Engineering Intern
 I also worked at [Lawrence Livermore National Laboratory](https://computation.llnl.gov/) for a summer, implementing distributed MCMC in Scala and Spark according to several different methods recently published, e.g. [Neiswanger et. al.](https://arxiv.org/abs/1311.4780).

@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -31,12 +31,10 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
 }
 </script>
 
@@ -231,7 +229,7 @@ $(document).ready(function () {
 <p><img src="images/profile.jpg" style="width:25%; border:10px solid; margin-right: 20px" align="left"></p>
 <div id="summary" class="section level1">
 <h1>Summary</h1>
-<p>I am a computational statistician, with background in causal inference and machine learning. I pride myself of writing unit-tested and well-documented code that yields reproducible results in a performant manner. Currently, I practice Data Science at <a href="http://www.cardinalanalytx.com/">Cardinal Analytx Solutions</a> and also Lecture a sequence of graduate level scientific-computing courses at Stanford University.</p>
+<p>I am a computational statistician, with a background in causal inference and machine learning. I pride myself on writing unit-tested and well-documented code that yields reproducible results in a performant manner. Currently, I practice Data Science at <a href="https://medium.com/airbnb-engineering/tagged/data-science">Airbnb</a> and also Lecture a sequence of graduate level scientific-computing courses at Stanford University.</p>
 <p>My full CV is available <a href="files/santucci_andreas.pdf">here</a>.</p>
 </div>
 
@@ -258,7 +256,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

@@ -6,7 +6,8 @@
 <img src="images/profile.jpg" style="width:25%; border:10px solid; margin-right: 20px" align="left">
 
 # Summary
-I am a computational statistician, with background in causal inference and machine learning. I pride myself of writing unit-tested and well-documented code that yields reproducible results in a performant manner. 
-Currently, I practice Data Science at [Cardinal Analytx Solutions](http://www.cardinalanalytx.com/) and also Lecture a sequence of graduate level scientific-computing courses at Stanford University.
+I am a computational statistician, with a background in causal inference and machine learning. 
+I pride myself on writing unit-tested and well-documented code that yields reproducible results in a performant manner. 
+Currently, I practice Data Science at [Airbnb](https://medium.com/airbnb-engineering/tagged/data-science) and also Lecture a sequence of graduate level scientific-computing courses at Stanford University.
 
 My full CV is available [here](files/santucci_andreas.pdf).

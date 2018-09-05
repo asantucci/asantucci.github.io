@@ -11,7 +11,19 @@ believe in giving back to the community. What's better than having a lightbulb m
 thinking through a problem? Being able to create that same illumination within another student with 
 a concise explanation.
 
+### Experience
+A listing of some of my past teaching experiences.
+  
+  - Teaching Assistant (CME 106, CME 323)
+  
+  - Teaching Fellow (CME 211, CME 305, CME 323)
+  
+  - [Summer Workshops](https://icme.stanford.edu/events/icme-summer-workshops) (Intro to R '16, '17, '18, and Intro to Stats '17)
+
 ### Sample Materials
-I recently put together a few notes on an [Introduction to R Programming](files/Introduction_to_R_ICME_Short_Course_2018.pdf) for a one-day short course.
-Here's an example of some [distributed algorithms notes](files/cme323_lec5.pdf) I created for a course 
-I helped teach. I enjoy consolidating information into concise and digestable notes. For example, here's a course summary from my [first statistical inference course](files/stats_200_cs.pdf).
+I enjoy consolidating information into concise and digestable notes. For example, here's a course summary from my 
+[first statistical inference course](files/stats_200_cs.pdf). Some more examples:
+
+  - I recently put together a few notes on an [Introduction to R Programming](files/Introduction_to_R_ICME_Short_Course_2018.pdf) for a one-day short course.
+
+  - Here's an example of some [distributed algorithms notes](files/cme323_lec5.pdf) I created for a course I helped teach. 

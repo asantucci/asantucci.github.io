@@ -23,8 +23,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -34,12 +34,10 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
 }
 </script>
 
@@ -326,9 +324,17 @@ div.tocify {
 
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<div id="data-scientist-algorithms" class="section level3">
+<h3>Data Scientist (Algorithms)</h3>
+<p>Excited to be joining Airbnb’s Data Science team!</p>
+</div>
+<div id="statistical-consultant" class="section level3">
+<h3>Statistical Consultant</h3>
+<p>I’m passionate about statistics, and am always eager to help peers and colleagues with their work. Recently, I’ve been authoring the core statistical analyses for <a href="https://www.pandopooling.com/">Pando Pooling</a>, a startup aimed at pooling professional athletes together (with similar projected earnings) such that they may lower their individual career risk. We collected data on over fifty thousand professional baseball players, alongside their career earnings and player-statistics. These data are then used to construct models which estimate a player’s (remaining) lifetime earnings, as well as the likelihood of making the Majors or reaching arbitration.</p>
+</div>
 <div id="data-scientist" class="section level3">
 <h3>Data Scientist</h3>
-<p>As first data scientist at Cardinal, I have built out the core product(s), authoring the feature engineering and modeling packages. The main implications are expanding our feature set for each patient from 800 variables to over 80k, which improved model performance by 50% when combined with some more flexible machine learning models. I also dropped the memory footprint and compute time by orders of magnitude through use of sparse matrices and a mind toward performant algorithms. I’ve extended their models to work for arbitrary labeling functions, e.g. predicting a patient’s risk profile or orthopedic joint surgeries; this helps us realize more value with new clients.</p>
+<p>As first “data scientist” at <a href="http://cardinalanalytx.com/">Cardinal</a>, I have built out the core product(s), authoring the feature engineering and modeling packages. The main implications are expanding our feature set for each patient from 800 variables to over 80k, which improved model performance by 50% when combined with some more flexible machine learning models. I also dropped the memory footprint and compute time by orders of magnitude through use of sparse matrices and a mind toward performant algorithms. I’ve extended their models to work for arbitrary labeling functions, e.g. predicting a patient’s risk profile or orthopedic joint surgeries; this helps us realize more value with new clients.</p>
 </div>
 <div id="computational-engineering-intern" class="section level3">
 <h3>Computational Engineering Intern</h3>
@@ -364,7 +370,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

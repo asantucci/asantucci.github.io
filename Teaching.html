@@ -23,8 +23,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -34,12 +34,10 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
 }
 </script>
 
@@ -329,9 +327,22 @@ div.tocify {
 <h3>Why I Teach</h3>
 <p>I love to share my passion(s) with others. Education has been a cornerstone of my life and I strongly believe in giving back to the community. What’s better than having a lightbulb moment after spending hours thinking through a problem? Being able to create that same illumination within another student with a concise explanation.</p>
 </div>
+<div id="experience" class="section level3">
+<h3>Experience</h3>
+<p>A listing of some of my past teaching experiences.</p>
+<ul>
+<li><p>Teaching Assistant (CME 106, CME 323)</p></li>
+<li><p>Teaching Fellow (CME 211, CME 305, CME 323)</p></li>
+<li><p><a href="https://icme.stanford.edu/events/icme-summer-workshops">Summer Workshops</a> (Intro to R ’16, ’17, ’18, and Intro to Stats ’17)</p></li>
+</ul>
+</div>
 <div id="sample-materials" class="section level3">
 <h3>Sample Materials</h3>
-<p>I recently put together a few notes on an <a href="files/Introduction_to_R_ICME_Short_Course_2018.pdf">Introduction to R Programming</a> for a one-day short course. Here’s an example of some <a href="files/cme323_lec5.pdf">distributed algorithms notes</a> I created for a course I helped teach. I enjoy consolidating information into concise and digestable notes. For example, here’s a course summary from my <a href="files/stats_200_cs.pdf">first statistical inference course</a>.</p>
+<p>I enjoy consolidating information into concise and digestable notes. For example, here’s a course summary from my <a href="files/stats_200_cs.pdf">first statistical inference course</a>. Some more examples:</p>
+<ul>
+<li><p>I recently put together a few notes on an <a href="files/Introduction_to_R_ICME_Short_Course_2018.pdf">Introduction to R Programming</a> for a one-day short course.</p></li>
+<li><p>Here’s an example of some <a href="files/cme323_lec5.pdf">distributed algorithms notes</a> I created for a course I helped teach.</p></li>
+</ul>
 </div>
 
 
@@ -359,7 +370,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
