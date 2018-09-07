@@ -19,9 +19,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-1.1/highlight.js"></script>
@@ -166,101 +163,6 @@ $(document).ready(function () {
 
 
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
-
-
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -326,20 +228,19 @@ div.tocify {
 </div>
 
 
-<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
-<div id="undergraduate" class="section level3">
-<h3>Undergraduate</h3>
-<p>My bachelor’s degree was a BA in economics, which I proudly received from <a href="https://www.econ.berkeley.edu/">U.C. Berkeley’s economics department</a>. For my honors thesis, I examined a quasi-experiment by which we could infer the <a href="http://econ.berkeley.edu/sites/default/files/Santucci.pdf">causal effect of sports participation on NCAA D1 student-athlete GPA’s</a> at the university. I was supervised by <a href="https://econ.washington.edu/news/2014/03/21/amazon-principal-economist-and-affiliate-professor-greg-duncan-introduces-machine">Gregory Duncan</a> and <a href="http://gibbons.bio/">Charlie Gibbons</a>, to whom I am indebted for inspiring my passion for this field.</p>
+<p><link rel="stylesheet" href="styles.css" type="text/css"> <img src="images/Bean.jpg" style="width:40%; border:10px solid; margin-right: 20px" align="left"></p>
+<div id="personal-life" class="section level3">
+<h3>Personal Life</h3>
+<p>I have been overjoyed these past couple years by my rescue dog, Bean!</p>
 </div>
-<div id="graduate" class="section level3">
-<h3>Graduate</h3>
-<p>Inspired to learn more about the mathematical underpinnings of the models I was using, I pursued an M.S. at Stanford’s <a href="https://icme.stanford.edu/">Institute for Computational and Mathematical Engineering</a>. At Stanford, I spent the first few quarters studying systems programming, discrete math, and stochastic processes with voracious appetite for learning. The second half of my program was spent as a Teaching Fellow; I wrote an AutoGrader to facilitate the programmatic grading of student submissions for ICME’s core programming courses, and also helped teach courses in <a href="https://stanford.edu/~rezab/classes/cme305/W17/">discrete math and (distributed) algorithms</a>. In addition, I passed qualifying exams in both stochastic processes and discrete math and algorithms. In my last year, I worked with <a href="https://www.gsb.stanford.edu/faculty-research/faculty/guido-w-imbens">Guido Imbens</a> on a quasi-experiment by which we were able to infer the causal effect of nightlife visitation on subsequent day sporting performance in professional sports. These “hangover effects” were not only statistically significant, but also earned a profit under historical simulation of the marketplace.</p>
+<div id="athletics" class="section level3">
+<h3>Athletics</h3>
+<p>In my youth, I practiced Gymnastics. Here’s <a href="https://www.youtube.com/watch?v=8Qg4V50X7QQ&amp;t">a video of me competing at a national competition in Las Vegas</a>; incidentally, I was part of Stanford’s team at the time.</p>
+<p>In college, I walked-on to Cal’s Swimming and Diving team. Here’s <a href="https://www.youtube.com/watch?v=LWGe3ETIur4">one of my dives from my last home-meet in 2012</a>. Training 30+ hours a week got me wondering: what’s the effect on my academic performance? With this, I set out to write my senior thesis exploring <a href="http://econ.berkeley.edu/sites/default/files/Santucci.pdf">causal effects of NCAA D1 sports participation on GPA’s</a>. Obtaining an answer to a question that mattered to me, I got hooked on statistics.</p>
 </div>
 
 
 
-</div>
-</div>
 
 </div>
 
