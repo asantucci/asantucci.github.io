@@ -7,8 +7,8 @@ output:
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-### Data Scientist (Algorithms)
-Excited to be joining Airbnb's Data Science team!
+### Data Scientist
+Search and Discovery at Google YouTube.
 
 ### Statistical Consultant
 I'm passionate about statistics, and am always eager to help peers and colleagues with their work. Recently, I've been authoring the core statistical analyses for [Pando Pooling](https://www.pandopooling.com/), a startup aimed at pooling professional athletes together (with similar projected earnings) such that they may lower their individual career risk. We collected data on over fifty thousand professional baseball players, alongside their career earnings and player-statistics. These data are then used to construct models which estimate a player's (remaining) lifetime earnings, as well as the likelihood of making the Majors or reaching arbitration.
