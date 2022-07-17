@@ -1,14 +1,14 @@
 ---
 output:
-  html_document: 
-    toc: true
-    toc_float: true
+  html_document
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-### Data Scientist
-Search and Discovery at Google YouTube.
+### Senior Scientist
+I dance on the boundary of a Software Engineer and Data Scientist within Search and Discovery at Google's YouTube: I design recommendation algorithms and have been a lead engineer on YouTube Shorts, e.g.
+I serve as the Technical Infrastructure Lead for YouTube Data-Science.
+Additionally, I'm a Readability Mentor for both R and SQL (for Engineers across Google).
 
 ### Statistical Consultant
 I'm passionate about statistics, and am always eager to help peers and colleagues with their work. Recently, I've been authoring the core statistical analyses for [Pando Pooling](https://www.pandopooling.com/), a startup aimed at pooling professional athletes together (with similar projected earnings) such that they may lower their individual career risk. We collected data on over fifty thousand professional baseball players, alongside their career earnings and player-statistics. These data are then used to construct models which estimate a player's (remaining) lifetime earnings, as well as the likelihood of making the Majors or reaching arbitration.
