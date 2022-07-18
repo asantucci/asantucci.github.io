@@ -6,7 +6,7 @@ navbar:
     - text: "Education"
       href: "Education.html"
     - text: "Work Experience"
-      href: "Work_Experience.html"
+      href: "Work-Experience.html"
     - text: "Teaching"
       href: "Teaching.html"
     - text: "Personal"
