@@ -1,0 +1,23 @@
+---
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+### Undergraduate
+For my honors thesis, I examined a quasi-experiment by which we could infer
+the [causal effect of sports participation on NCAA D1 student-athlete GPA's](http://econ.berkeley.edu/sites/default/files/Santucci.pdf) at the university.
+I was supervised by [Gregory Duncan](https://econ.washington.edu/news/2014/03/21/amazon-principal-economist-and-affiliate-professor-greg-duncan-introduces-machine) and [Charlie Gibbons](http://gibbons.bio/), to whom I am indebted for inspiring my passion for this field.
+
+### Graduate 
+For my M.S. Capstone Research, I worked with Guido Imbens (later named a Nobel Laureate in 2021) to tie together Causal Inference with Machine Learning and Sports.
+Specifically, the paper we wrote examines the causal effects of sporting teams visiting cities with an active nightlife index, as measured by their next day sporting performance.
+The research was awarded an A+ by Guido, and I was able to use the methodology to profitably bet the summer following our research.
+
+### Industry
+On the [Gemini 1.5 Technical Report](https://arxiv.org/pdf/2312.11805v4), I was cited as a _core contributor_, for my efforts teaching the Gemini model to self-critique.
+
+Currently, I'm researching Spatial Super Resolution in the context of YouTube, Photos, and Drive.
