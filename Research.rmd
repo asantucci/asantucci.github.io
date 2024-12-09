@@ -17,7 +17,13 @@ For my M.S. Capstone Research, I worked with Guido Imbens (later named a Nobel L
 Specifically, the paper we wrote examines the causal effects of sporting teams visiting cities with an active nightlife index, as measured by their next day sporting performance.
 The research was awarded an A+ by Guido, and I was able to use the methodology to profitably bet the summer following our research.
 
-### Industry
+### National Lab Research
+During my first year of graduate school, I interned at Lawrence Livermore as a computational engineer.
+Our work was in partnership with Kaiser research; we developed Machine Learning models to predict Sepsis prognosis.
+We authored several open-source statistical libraries (SparkPlug, most notably), along the way.
+[Example publication](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lqqXOvkAAAAJ&citation_for_view=lqqXOvkAAAAJ:2osOgNQ5qMEC).
+
+### Google Research
 On the [Gemini 1.5 Technical Report](https://arxiv.org/pdf/2312.11805v4), I was cited as a _core contributor_, for my efforts teaching the Gemini model to self-critique.
 
 Currently, I'm researching Spatial Super Resolution in the context of YouTube, Photos, and Drive.
