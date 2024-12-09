@@ -15,7 +15,8 @@ a concise explanation.
 A listing of some of my past teaching experiences.
 
   - Lecturer for core, graduate level courses within the Institute for Computational and Mathematical Engineering.
-    - Served as a Lecturer for 5+ years for [CME 211](https://github.com/CME211/notes#contents) and [CME 212](https://explorecourses.stanford.edu/search?q=cme+212&view=catalog&page=0&filter-coursestatus-Active=on&collapse=&academicYear=20212022).
+    - Served as a Lecturer for 7+ years for [CME 211](https://github.com/CME211/notes#contents) and [CME 212](https://explorecourses.stanford.edu/search?q=cme+212&view=catalog&page=0&filter-coursestatus-Active=on&collapse=&academicYear=20212022).
+    - Earned a "Best Lecturer" award 3 different years! Awarded is determined and presented by students and faculty.
   
   - Teaching Assistant (CME 106, CME 323)
   
