@@ -5,11 +5,21 @@ output:
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-### Current Role: Senior Scientist (@GOOG)
-I dance on the boundary of a Software Engineer and Data Scientist within Search and Discovery at Google's YouTube: I design recommendation algorithms and have been a lead engineer on YouTube Shorts. In addition to serving as a Technical Lead for algorithms/statistics/ML projects,  I serve as the Technical Infrastructure Lead for YouTube Data-Science.
-Additionally, I'm a Readability Mentor for both R and SQL (for Engineers across Google).
+### Current Role: Generative AI Software Engineer (@GOOG)
+Accomplishments
+ - Founding engineer on YouTube Shorts. Designed dozens of recommendation algorithms.
+ - Core contributor on the [Gemini 1.5 Technical Report](https://arxiv.org/pdf/2312.11805v4).
+ - Currently researching Spatial Super Resolution, including related technologies like Text to Video modeling.
+
+Other notable achievements include:
+ - Awarded "Readability" in each of: C++, Python, R, SQL.
+ - For each of the 4 languages above, I also serve as a Readability Mentor across Google.
+ - Led the Technical Infrastructure project for YouTube Data Science, scaling the needs of the organization as we grew from 50 to 100 Data Scientists.
 
 ### Past Experience
+#### Senior Scientist @ GOOG
+Over the course of several years, I was quickly promoted to a Senior Scientist position. Recognized for my successful efforts to grow YouTube Shorts, I played a pivotal role in the growth and development of the product.
+
 #### Statistical Consultant
 I'm passionate about statistics, and am always eager to help peers and colleagues with their work. Recently, I've been authoring the core statistical analyses for [Pando Pooling](https://www.pandopooling.com/), a startup aimed at pooling professional athletes together (with similar projected earnings) such that they may lower their individual career risk. We collected data on over fifty thousand professional baseball players, alongside their career earnings and player-statistics. These data are then used to construct models which estimate a player's (remaining) lifetime earnings, as well as the likelihood of making the Majors or reaching arbitration.
 
