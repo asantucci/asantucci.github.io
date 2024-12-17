@@ -1,2 +1,2 @@
 # asantucci.github.io
-[Andreas Santucci - Research Portfolio](asantucci.github.io/Research.html)
+[Andreas Santucci - Research Portfolio](https://asantucci.github.io/Research.html)
