@@ -310,51 +310,80 @@ scientific-computing courses at Stanford University.
 
 <div id="undergraduate" class="section level3">
 <h3>Undergraduate (2012)</h3>
-<p>For my honors thesis in economics, I examined a quasi-experiment by which we could
-infer the <a
-href="http://econ.berkeley.edu/sites/default/files/Santucci.pdf">causal
-effect of sports participation on NCAA D1 student-athlete GPA’s</a> at
-the university. I was supervised by <a
-href="https://econ.washington.edu/news/2014/03/21/amazon-principal-economist-and-affiliate-professor-greg-duncan-introduces-machine">Gregory
-Duncan</a> and <a href="http://gibbons.bio/">Charlie Gibbons</a>, to
-whom I am indebted for inspiring my passion for computing.</p>
+<p>My research journey began with my B.A. thesis in Economics at U.C. Berkeley, where I came up with a quasi-experiment framework 
+to answer the question, “what’s the causal effect of sports participation on GPA’s?”. This was a practical question of 
+interest to me as a student athlete. I used STATA to analyze Average Treatment Effects, 
+and the quasi-experiment involved looking toward student-athletes who either walked onto the team midway 
+through their collegiate career, or who got injured midway through their collegiate sports career and then were forced to no longer play sport 
+(*in either case, we get to observe the scholastic performance for the same individual, partitioned by participation in sport). 
+I found that football players with low incoming SAT scores were likely to have their grades increased by 0.8 grade points as a function of being a student-athlete, 
+whereas for women’s crew the effect was reversed: participating in sports decreased their GPA’s by almost 1/2 a grade point. 
+The intuition here is partly a regression to the (global) mean, but also can be explained by minimum grade requirements for being eligible to compete at the NCAA level, 
+and access to tutors. Being able to answer a meaningful and practically significant question of interest is what got me hooked on research.
+</p>
 </div>
 <div id="graduate" class="section level3">
 <h3>Econ Consulting (2012-'14)</h3>
-<p>For several years starting in 2012, I worked with <a href="https://econ.berkeley.edu/profile/daniel-l-mcfadden">Daniel McFadden</a>, Nobel Laureate and founder of the Logistic
-Regression model, to research the causal effects of the Gulf Oil Spill on
-Water Recreation. We constructed a discrete choice utility model that estimated
-the value of lost visitation to Gulf states as a function of the spill.
-I used tools like Matlab to build a parallel implementation of a Logit model, as well
-as ArcGIS for mapping regions of impact.</p>
+<p>
+For several years after graduation, I worked with <a href="https://econ.berkeley.edu/profile/daniel-l-mcfadden">Daniel McFadden</a>, 
+nobel laureate and founder of the logistic regression model, 
+on estimating causal damages from the BP Gulf Oil Spill. 
+In particular, I was the core contributor for procuring R code to support Dan’s expert testimony on how the spill affected tourism in the Gulf. 
+We constructed a discrete choice model to infer the value of lost visitation to the Gulf, based in part on proprietary survey data. 
+This involved creating a cost matrix which estimated the travel expenditure for various sized groups coming from all around the country and ending 
+in Gulf locations. From the survey data alone, we were able to estimate e.g. what the cost of driving and flying was per mile of travel. 
+When we put together travel costs with lost visitation from beach surveys, we were able to come up with a bottom-line number for the impact of the 
+spill on visitation and the financial implications to surrounding counties. I used ArcGIS to map out the fiscal impacts as a function of 
+geographic location across all 3,000+ counties in the US.
+</p>
 <h3>Graduate (2014-'17)</h3>
-<p>During my first year of graduate school, I interned at Lawrence
-Livermore as a computational engineer. Our work was in partnership with
-Kaiser research; we developed Machine Learning models to predict Sepsis
-prognosis. We authored several open-source statistical libraries
-(SparkPlug, most notably), along the way. <a
-href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=lqqXOvkAAAAJ&amp;citation_for_view=lqqXOvkAAAAJ:2osOgNQ5qMEC">Example
-publication</a>.</p>
-<p>After taking a distributed algorithms course, I worked with Professor <a href="https://stanford.edu/~rezab/">Reza Zadeh</a> on a Distributed Minimum Cut paper (<a href="files/rd.pdf">draft paper</a>).</p> 
-<p>For my M.S. Capstone Research, I worked with renowned Economist <a href="https://www.gsb.stanford.edu/faculty-research/faculty/guido-w-imbens">Guido Imbens</a> (later
-named a Nobel Laureate in 2021) to tie together Causal Inference with
-Machine Learning and Sports. Specifically, the paper we wrote examines
-the causal effects of sporting teams visiting cities with an active
-nightlife index, as measured by their next day sporting performance. The
-research was awarded an A+ by Guido (<a href="files/causal_hangover_effect (1).pdf">excerpted writing sample</a>), and I was able to use the
-methodology to profitably bet the summer following our research.</p>
+<p>
+At Stanford, I earned an M.S. in Computational Mathematics (GPA 3.96). 
+After earning an A+ in a project-based Distributed Algorithms course, 
+I worked with Professor Reza Zadeh on a distributed min-cut algorithm for the remainder of the summer. 
+Although we didn’t publish, it was an excellent exercise in research. 
+For my M.S. thesis, I worked under the supervision of esteemed economist <a href="https://www.gsb.stanford.edu/faculty-research/faculty/guido-w-imbens">Guido Imbens</a> (now Nobel Laureate). 
+My work applied causal inference with machine learning toward sports analytics, receiving an A+ for its creativity and rigor. 
+Specifically, we analyzed bookmaker’s odds of meeting the spread, i.e. the expected score differential between two teams, and used this as a conditioner 
+on which we could observe unanticipated effects. We measured the nightlife index within a city using Bureau of Labor Statistics census data 
+on the number of musical recording studios and entertainment clubs within the locale. Teams visiting cities with higher nightlife indices 
+consistently underperformed against bookmaker expectations, revealing a novel pattern in sports analytics. 
+This yielded a profitable betting strategy that I pursued for the summer after graduation. (<a href="files/causal_hangover_effect (1).pdf">excerpted writing sample</a>)
+</p>
 </div>
+<div id="lecturing" class="section level3">
+<h3>Lecturing</h3>
+<p>
+After graduating, I was asked by the Director of ICME, Margot Gerritsen, to serve as a Lecturer for my alma mater; 
+for the next seven years, in addition to my full time role(s) within industry, 
+I concurrently taught graduate courses in Python and C++ to nearly 200 students annually. 
+I managed a staff of at least 4 TA’s each quarter, and I was awarded “Best Lecturer” 3 separate years, 
+as determined by students and fellow faculty. I also led programming workshops and interview preparation sessions, 
+honing my ability to distill complex ideas and fostering a passion for teaching that I hope to continue in a faculty role after completing my PhD. 
+I’m confident that skills I garnered as a lecturer will be useful in describing my research in front of large audiences.</p>
 <div id="google-research" class="section level3">
 <h3>Google Research (2018-'24)</h3>
+<p>
+At Google, I have worked on transformative projects at the intersection of machine learning and product innovation. 
+At YouTube, I developed recommendation algorithms that transitioned from heuristic to machine-learned strategies, contributing 
+significantly as a founding engineer on YouTube Shorts. Concretely, while we started with a deterministic triggering and ranking strategy 
+(i.e. always placing the Shorts “shelf” in the same position within the feed for all users), over the course of several years I iteratively refined 
+a reward model to capture how much value the Shelf delivers on a per-user basis, and then created a probabilistic model to show the shelf with a 
+probability that is proportional to the estimated long(er) term value. My foundations in distributed algorithms allowed me to personally implement my 
+own ideas into production.
+</p>
 <p>The <a href="https://arxiv.org/pdf/2312.11805v4">Gemini 1.5
 Technical Report</a> captured the attention of the scientific community (earning over 2,000 citations in the past year). 
-I was cited as a <em>core contributor</em>, for my
-efforts teaching the Gemini model to self-critique (in a way that is consistent with human-raters).
-I proposed combining human labels with LLM predictions (for model-quality) using Model-Assisted Survey Estimation
-in a principled fashion as a means to reducing uncertainty.
+As part of the core team, I created a “self-critique” framework for LLM evaluation that was consistent with human raters, and was recognized on the 1.5 technical report accordingly.
+Specifically, I proposed using Model Assisted Estimation within the LLM self-critique framework; this is a method that allows us to reduce uncertainty by combining ground truth labels (for model quality) 
+with model predictions in a way that yields an unbiased and yet more efficient estimator.
 </p>
-<p>Currently, I’m researching Spatial Super Resolution in the context of
-YouTube, Photos, and Drive; the underlying research is based on Diffusion Transformers.</p>
+<p>
+Most recently, my work in Generative AI has focused on spatial Super-Resolution, 
+where I’ve personally implemented a Diffusion Transformer for video enhancement, i.e. 
+a Content-Aware Degradation-Driven Transformer, inspired by the latest research. 
+As one of two contributors on the research sub-team, I played a hands-on role in developing the network architecture using JAX primitives.
+</p>
 </div>
 <div id="future-directions" class="section level3">
 <h3>Future Directions</h3>
