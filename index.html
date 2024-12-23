@@ -388,13 +388,18 @@ own ideas into production using C++.
 <p>The <a href="https://arxiv.org/pdf/2312.11805v4">Gemini 1.5
 Technical Report</a> captured the attention of the scientific community (garnering over 2,000 citations in the past year). 
 As part of the core team, I created a “self-critique” framework for LLM evaluation that was consistent with human raters, and was recognized on the 1.5 technical report accordingly.
-After realizing that we could engineer an "auto-eval", I tackled problems like making predictions for model quality more consistent and more interpretable.
-The most effective strategy for this was to tune a prompt with explicit dimensions and criterion from which an assessment could be made
-reliably. After creating a satisfactory evaluation framework, I then became interested with combining the results from
-human-raters, comprising ground truth labels, with predictions for model quality from the agent.
+The mechanism for evaluation was a side-by-side framework comparing two different model responses to a given prompt.
+The most effective way to obtain reliable and interpretable results was to embed explicit rubrics within instruction set
+to the agent. Using zero or few-shot learning, we were able to engineer a machine-learned rater with inter-rater reliability
+that was at least as good as the average human-rater.
+After creating a satisfactory evaluation framework, I then became interested with combining the results from
+human-raters, comprising ground truth labels, with predictions for model quality from the agent in a way that sensibly
+augments our evaluation dataset.
 Specifically, I proposed using Model Assisted Estimation within the LLM self-critique framework: this allows us to refine
 a model based estimate with an offset factor that captures the expected bias, yielding an overall unbiased estimator with
-reduced variance. Lastly, I also worked on mitigating hallucinations within the Extension-tools framework. For example, by first creating a manifest of known
+reduced variance. In other words, instead of using just an LLM score for model quality, or alternatively just using a human rater based score,
+I came up with a way to combine the two sets of data meaningfully and in a statistically rigorous way.
+Lastly, I also worked on mitigating hallucinations within the Extension-tools framework. For example, by first creating a manifest of known
 and available tools that the LLM could invoke, I could then use a simple Finite State Transducer in Python to disregard tool names that were not found in the manifest.
 </p>
 <p>
