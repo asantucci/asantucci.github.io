@@ -100,11 +100,17 @@ pre code {
         gap: 10px; /* Adjust gap for smaller layout */
     }
     .profile-image {
+        flex: 1
         margin-right: 0; /* Removes right margin in vertical layout */
         max-height: 150px; /* Reduces image size for smaller screens */
     }
+    .profile-image img {
+           width: 100%;
+           height: auto;
+           border-radius: 8px
+    }
     .profile-text {
-        flex: 1;
+        flex: 2;
         text-align: justify;
     }
 }
@@ -314,24 +320,25 @@ $(document).ready(function () {
 
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
-<div id="summary" class="section level1">
-<h1>Research Profile</h1>
-<div class="profile-image">
-       <div class="profile-picture">
-              <img src="images/profile.jpg" alt="Andreas Santucci">
-       </div>
-       <div class="profile-text">
-<p>I am a computational statistician, with a background in causal
-inference and machine learning. Currently, I develop Generative AI
-software at <a
-href="http://www.unofficialgoogledatascience.com/">Google</a>.
-Previously, I also Lectured a sequence of graduate level
-scientific-computing courses at Stanford University.
-With my unique blend of academic, teaching, and industry experience, I aspire to contribute to the 
-academic community by publishing innovative work and mentoring the next generation of researchers.
-</p>
-       </div>
-</div>
+    <div id="summary" class="section level1">
+        <h1>Research Profile</h1>
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="images/profile.jpg" alt="Andreas Santucci">
+            </div>
+            <div class="profile-text">
+                <p>
+                    I am a computational statistician, with a background in causal
+                    inference and machine learning. Currently, I develop Generative AI
+                    software at <a href="http://www.unofficialgoogledatascience.com/">Google</a>.
+                    Previously, I also lectured a sequence of graduate-level
+                    scientific-computing courses at Stanford University.
+                    With my unique blend of academic, teaching, and industry experience, I aspire to contribute to the 
+                    academic community by publishing innovative work and mentoring the next generation of researchers.
+                </p>
+            </div>
+        </div>
+    </div>
 
 <div id="undergraduate" class="section level3">
 <h3>Undergraduate (2012)</h3>
