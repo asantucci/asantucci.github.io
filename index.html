@@ -329,11 +329,15 @@ and access to tutors. Being able to answer a meaningful and practically signific
 <p>
 For several years after graduation, I worked with <a href="https://econ.berkeley.edu/profile/daniel-l-mcfadden">Daniel McFadden</a>, 
 Nobel laureate and founder of the logistic regression model, 
-on estimating causal damages from the BP Gulf Oil Spill. 
+on estimating causal damages from the 2010 Gulf Oil Spill. 
 In particular, I was the core contributor for procuring R code to support Dan’s expert testimony on how the spill affected tourism in the Gulf. 
 We constructed a discrete choice model to infer the value of lost visitation to the Gulf, based in part on proprietary survey data. 
-This involved creating a cost matrix which estimated the travel expenditure for various sized groups coming from all around the country and ending 
-in Gulf locations. From the survey data alone, we were able to estimate e.g. what the cost of driving and flying was per mile of travel. 
+A national level survey with data from over 26,000 households traveling to almost 40,000 unique destinations was collected 
+in order to estimate the value of taking a trip to a particular location, conditional on demographic characteristics of the 
+trip participants as well as destination specific features. I then used Python to create two
+giant “time” and “distance” travel cost matrices, each containing the cost, in minutes or miles, for
+all combinations of travelers and trips in the survey.
+From this, we were able to estimate e.g. what the cost of driving and flying was per mile of travel. 
 When we put together travel costs with lost visitation from beach surveys, we were able to come up with a bottom-line number for the impact of the 
 spill on visitation and the financial implications to surrounding counties. I used ArcGIS to map out the fiscal impacts as a function of 
 geographic location across all 3,000+ counties in the US.
