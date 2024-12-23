@@ -388,10 +388,14 @@ own ideas into production using C++.
 <p>The <a href="https://arxiv.org/pdf/2312.11805v4">Gemini 1.5
 Technical Report</a> captured the attention of the scientific community (garnering over 2,000 citations in the past year). 
 As part of the core team, I created a “self-critique” framework for LLM evaluation that was consistent with human raters, and was recognized on the 1.5 technical report accordingly.
-Specifically, I proposed using Model Assisted Estimation within the LLM self-critique framework; this is a method that allows us to reduce uncertainty by combining ground truth labels (for model quality) 
-with model predictions in a way that yields an unbiased and yet more efficient estimator.
-I also worked on mitigating hallucinations within the Extension-tools framework. For example, by creating a manifest of known
-and available tools that the LLM could invoke, a Finite State Transducer could then be used to disregard tool names that were not found in the manifest.
+After realizing that we could engineer an "auto-eval", I tackled problems like making predictions for model quality more consistent and more interpretable.
+The most effective strategy for this was to tune a prompt with explicit dimensions and criterion from which an assessment could be made
+reliably. After creating a satisfactory evaluation framework, I then became interested with combining the results from
+human-raters, comprising ground truth labels, with predictions for model quality from the agent.
+Specifically, I proposed using Model Assisted Estimation within the LLM self-critique framework: this allows us to refine
+a model based estimate with an offset factor that captures the expected bias, yielding an overall unbiased estimator with
+reduced variance. Lastly, I also worked on mitigating hallucinations within the Extension-tools framework. For example, by first creating a manifest of known
+and available tools that the LLM could invoke, I could then use a simple Finite State Transducer in Python to disregard tool names that were not found in the manifest.
 </p>
 <p>
 Most recently, my work in Generative AI has focused on media algorithms and spatial Super Resolution.
