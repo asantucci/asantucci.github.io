@@ -399,8 +399,6 @@ Specifically, I proposed using Model Assisted Estimation within the LLM self-cri
 a model based estimate with an offset factor that captures the expected bias, yielding an overall unbiased estimator with
 reduced variance. In other words, instead of using just an LLM score for model quality, or alternatively just using a human rater based score,
 I came up with a way to combine the two sets of data meaningfully and in a statistically rigorous way.
-Lastly, I also worked on mitigating hallucinations within the Extension-tools framework. For example, by first creating a manifest of known
-and available tools that the LLM could invoke, I could then use a simple Finite State Transducer in Python to disregard tool names that were not found in the manifest.
 </p>
 <p>
 Most recently, my work in Generative AI has focused on media algorithms and spatial Super Resolution.
