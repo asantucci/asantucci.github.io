@@ -334,10 +334,10 @@ In particular, I was the core contributor for procuring R code to support Dan’
 We constructed a discrete choice model to infer the value of lost visitation to the Gulf, based in part on proprietary survey data. 
 A national level survey with data from over 26,000 households traveling to almost 40,000 unique destinations was collected 
 in order to estimate the value of taking a trip to a particular location, conditional on demographic characteristics of the 
-trip participants as well as destination specific features. I then used Python to create two
+trip participants as well as destination specific features. I used Python to create two
 giant “time” and “distance” travel cost matrices, each containing the cost, in minutes or miles, for
 all combinations of travelers and trips in the survey.
-From this, we were able to estimate e.g. what the cost of driving and flying was per mile of travel. 
+From this, it was possible to estimate e.g. what the cost of driving and flying was per mile of travel. 
 When we put together travel costs with lost visitation from beach surveys, we were able to come up with a bottom-line number for the impact of the 
 spill on visitation and the financial implications to surrounding counties. I used ArcGIS to map out the fiscal impacts as a function of 
 geographic location across all 3,000+ counties in the US.
@@ -347,7 +347,10 @@ geographic location across all 3,000+ counties in the US.
 At Stanford, I earned an M.S. in Computational Mathematics (GPA 3.96). 
 After earning an A+ in a project-based Distributed Algorithms course, 
 I worked with Professor <a href="https://stanford.edu/~rezab/">Reza Zadeh</a> on a distributed min-cut algorithm for the remainder of the summer. 
-Although we didn’t publish, it was an excellent exercise in research (<a href="files/rd.pdf">draft paper</a>). 
+Although we didn’t publish, it was an excellent exercise in research (<a href="files/rd.pdf">draft paper</a>). I was also afforded a research internship
+at Lawrence Livermore National Lab, where I worked with Kaiser Research on Sepsis prognosis using machine learned models and bayesian methods (<a href="https://www.atsjournals.org/doi/epdf/10.1164/ajrccm-conference.2016.193.1_MeetingAbstracts.A2714?role=tab">example publication</a>).
+</p>
+<p>
 For my M.S. thesis, I worked under the supervision of esteemed economist <a href="https://www.gsb.stanford.edu/faculty-research/faculty/guido-w-imbens">Guido Imbens</a> (now Nobel Laureate). 
 My work applied causal inference with machine learning toward sports analytics, receiving an A+ for its creativity and rigor. 
 Specifically, we analyzed bookmaker’s odds of meeting the spread, i.e. the expected score differential between two teams, and used this as a conditioner 
@@ -357,7 +360,7 @@ We then filtered our attention to cases where games are played back-to-back with
 extent that next-day opponent is uncorrelated with exposure to treatment, we have identification in our variable of interest.
 Teams visiting cities with higher nightlife indices consistently underperformed against bookmaker expectations, revealing a novel pattern in sports analytics. 
 We replicate our analysis and find consistent results in two different sports: NBA and MLB.
-As a robustness check, we also verify that the hangover effect dissipates when players rest more than 24hrs after visiting a city with an active nightlife index.
+As a robustness check, we also verify that the hangover effect dissipates when players rest more than 24 hours after visiting a city with an active nightlife index.
 This yielded a profitable betting strategy that I pursued for the summer after graduation. (<a href="files/causal_hangover_effect (1).pdf">writing excerpt</a>)
 </p>
 </div>
@@ -380,19 +383,22 @@ significantly as a founding engineer on YouTube Shorts. Concretely, while we sta
 (i.e. always placing the Shorts “shelf” in the same position within the feed for all users), over the course of several years I developed and iteratively refined 
 a reward model to capture how much value the Shelf delivers on a per-user basis, and then created a probabilistic model to show the shelf with a 
 probability that is proportional to the estimated long(er) term value. My foundations in distributed algorithms allowed me to personally implement my 
-own ideas into production.
+own ideas into production using C++.
 </p>
 <p>The <a href="https://arxiv.org/pdf/2312.11805v4">Gemini 1.5
-Technical Report</a> captured the attention of the scientific community (earning over 2,000 citations in the past year). 
+Technical Report</a> captured the attention of the scientific community (garnering over 2,000 citations in the past year). 
 As part of the core team, I created a “self-critique” framework for LLM evaluation that was consistent with human raters, and was recognized on the 1.5 technical report accordingly.
 Specifically, I proposed using Model Assisted Estimation within the LLM self-critique framework; this is a method that allows us to reduce uncertainty by combining ground truth labels (for model quality) 
 with model predictions in a way that yields an unbiased and yet more efficient estimator.
+I also worked on mitigating hallucinations within the Extension-tools framework. For example, by creating a manifest of known
+and available tools that the LLM could invoke, a Finite State Transducer could then be used to disregard tool names that were not found in the manifest.
 </p>
 <p>
-Most recently, my work in Generative AI has focused on spatial Super-Resolution, 
-where I’ve personally implemented a Diffusion Transformer for video enhancement, i.e. 
-a Content-Aware Degradation-Driven Transformer, inspired by the latest research. 
-As one of two contributors on the research sub-team, I played a hands-on role in developing the network architecture using JAX primitives.
+Most recently, my work in Generative AI has focused on media algorithms and spatial Super Resolution.
+In order to tackle a new domain, I started with a literature review focusing on seminal papers such as Attention is All You Need, Vision Transformer, and Video Vision Transformer.
+I then personally implemented a Diffusion Transformer for video enhancement, i.e. 
+a Content-Aware Degradation-Driven Transformer (inspired by the latest research). As the sole author of the
+prototype algorithm, I acquired significant experience architecting neural networks using JAX primitives.
 </p>
 </div>
 <div id="future-directions" class="section level3">
@@ -400,9 +406,10 @@ As one of two contributors on the research sub-team, I played a hands-on role in
 With a strong background in fundamental tools like (causal) regression, rigorous training in
 computational and mathematical engineering, and more recent work with LLM's and computer vision techniques,
 my diverse background is well-suited toward research in foundation modeling. I believe that some of the most exciting
-research is ripe for fruition, specifically at the intersection of robotics and foundation models; the simple reason is
+research is ripe for fruition, specifically at the intersection of robotics and foundation models; the intuitive reason is
 that robotic agency becomes both practical and extremely useful once we have foundation models which can be queried with natural language and
-images.
+images. I believe that a collaboration with professors like <a href="https://ai.stanford.edu/~cbfinn/">Chelsea Finn</a> and
+<a href="https://people.eecs.berkeley.edu/~trevor/">Trevor Darrell</a> would be immensely valuable and impactful.
 </div>
 </div>
 </div>
