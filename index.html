@@ -395,7 +395,7 @@ that was at least as good as the average human-rater.
 After creating a satisfactory evaluation framework, I then became interested with combining the results from
 human-raters, comprising ground truth labels, with predictions for model quality from the agent in a way that sensibly
 augments our evaluation dataset.
-Specifically, I proposed using Model Assisted Estimation within the LLM self-critique framework: this allows us to refine
+Specifically, I proposed using <a href="https://projecteuclid.org/journals/statistical-science/volume-32/issue-2/Model-Assisted-Survey-Estimation-with-Modern-Prediction-Techniques/10.1214/16-STS589.pdf">Model Assisted Estimation</a> within the LLM self-critique framework: this allows us to refine
 a model based estimate with an offset factor that captures the expected bias, yielding an overall unbiased estimator with
 reduced variance. In other words, instead of using just an LLM score for model quality, or alternatively just using a human rater based score,
 I came up with a way to combine the two sets of data meaningfully and in a statistically rigorous way.
