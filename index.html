@@ -492,9 +492,10 @@ We also know from <a href="https://arxiv.org/abs/2203.15556">Training Compute-Op
 and can benefit from more labeled examples.
 It's curious to me to consider whether a Large Vision and Language model can autonomously construct its own curriculum for learning.
 Based on self reflecting after each epoch, can we use ideas inspired from embodied chain of thought reasoning to think through which segments of the existing training corpus are particularly challenging or uncertain?
-With the correct framing, one could yield a distribution over tasks, which serves as the input for 
+Perhaps the steps of the task at hand are a sequence of Bernoulli's (one for each example in the pretraining data) that describe whether to train on said example in the following epoch.
+The robot action beomes bootstrapping an internet scale dataset for the next training epoch. With the correct framing, one could think of a bootstrapped dataset as a distribution over tasks, which serves as the input for 
 <a href="https://arxiv.org/pdf/1703.03400">Model Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a>.
-This pattern feels reminiscent of the self-improvement loop that has allowed humans to progress our intelligence and ability.
+This pattern feels reminiscent of a <emph>self-improvement loop</emph> that has allowed humans to progress our intelligence and collective ability so profoundly.
 </p>
 </div>
 </div>
