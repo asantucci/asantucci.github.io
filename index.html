@@ -489,7 +489,9 @@ images. I believe that a collaboration with professors like <a href="https://ai.
 <p>
 Recent work on <a href="https://arxiv.org/pdf/2407.08693">Robotic Control via Embodied Chain of Thought Reasoning</a> demonstrates how robots can benefit 
 from multi-step reasoning grounded in their environment. Simultaneously, research on <a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a>
-indicates that large Vision and Language Models (VLMs) are often undertrained and could benefit from more diverse and informative data. This motivates a central question: 
+indicates that large Vision and Language Models (VLMs) are often undertrained and could benefit from more diverse and informative data. 
+A corollary is that given finite resource constraints, the composition of the training data matters a lot for final model quality. 
+This motivates a central question: 
 can a VLM autonomously construct its own learning curriculum?
 I envision a framework where a VLM, after each training epoch, engages in a form of "self-reflection" to identify areas of weakness. 
 Specifically, the model could analyze its performance on the training corpus, using metrics like loss or prediction uncertainty, 
