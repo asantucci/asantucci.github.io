@@ -482,21 +482,22 @@ research is ripe for fruition, specifically at the intersection of robotics and 
 that robotic agency becomes both practical and extremely useful once we have foundation models which can be queried with natural language and
 images. I believe that a collaboration with professors like <a href="https://ai.stanford.edu/~cbfinn/">Chelsea Finn</a> and
 <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a> would be immensely valuable and impactful; both individuals have published seminal works on foundation models, and additionally robotics.
+
 </div>
 <div id="example-area-of-work" class="section level4">
-<h4>Example Area of Work</h4>
-Consider <a href="https://arxiv.org/pdf/2407.08693">Robotic Control via Embodied Chain of Thought Reasoning</a> which 
+<h4>Example Area of Research</h4>
+<p>Consider <a href="https://arxiv.org/pdf/2407.08693">Robotic Control via Embodied Chain of Thought Reasoning</a> which 
 outlines how a robot can benefit from multi-step reasoning grounded in the environment space before acting.
 We also know from <a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a> that large Vision and Language models are undertrained 
 and can benefit from more labeled examples.
 It's curious to me to consider whether a Large Vision and Language model can autonomously construct its own curriculum for learning.
 To that end, consider the notion of self reflecting after each training epoch
 (during pretraining) on which examples were most informative or where information gain is maximized (drawing inspiration from active learning). Based on self reflecting,
-can we use ideas inspired from embodied chain of thought reasoning to <emph>either</emph> synthetically generate new training examples <emph>or</emph> target segments of the existing training corpus that are particularly challenging or uncertain.
-During the next epoch, the model would <emph>either</emph> train on a mixture of real world data and self constructed examples, <emph>or</emph> expend more training cycles on portions of the corpus that are considered diffuclt.
-A trick is to keep the resulting pretrained model highly adaptable to new tasks and domains, which is where techniques from 
-<a href="https://arxiv.org/pdf/1703.03400">Model Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a> become particularly relevant.
+can we use ideas inspired from embodied chain of thought reasoning to target segments of the existing training corpus that are particularly challenging or uncertain.
+We'd then <emph>bootstrap</emph> a new internet scale dataset where the objectives are to keep the model adaptable to new domains, inspired by 
+<a href="https://arxiv.org/pdf/1703.03400">Model Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a>.
 This pattern feels reminiscent of the self-improvement loop that has allowed humans to progress our intelligence and ability.
+</p>
 </div>
 </div>
 </div>
