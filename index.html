@@ -486,16 +486,27 @@ images. I believe that a collaboration with professors like <a href="https://ai.
 </div>
 <div id="example-area-of-work" class="section level4">
 <h4>Example Area of Research - Bootstrapping Foundation Models</h4>
-<p>Consider <a href="https://arxiv.org/pdf/2407.08693">Robotic Control via Embodied Chain of Thought Reasoning</a> which 
-outlines how a robot can benefit from multi-step reasoning grounded in the environment space before acting.
-We also know from <a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a> that large Vision and Language models are undertrained 
-and can benefit from more labeled examples.
-It's curious to me to consider whether a Large Vision and Language model can autonomously construct its own curriculum for learning.
-Based on self reflecting after each epoch, can we use ideas inspired from embodied chain of thought reasoning to think through which segments of the existing training corpus are particularly challenging or uncertain?
-Perhaps the steps of the task at hand are a sequence of Bernoulli's (one for each example in the pretraining data) that describe whether to train on said example in the following epoch.
-The robot action beomes bootstrapping an internet scale dataset for the next training epoch. With the correct framing, one could think of a bootstrapped dataset as a distribution over tasks, which serves as the input for 
-<a href="https://arxiv.org/pdf/1703.03400">Model Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a>.
-This pattern feels reminiscent of a <emph>self-improvement loop</emph> that has allowed humans to progress our intelligence and collective ability so profoundly.
+<p>
+Recent work on <a href="https://arxiv.org/pdf/2407.08693">Robotic Control via Embodied Chain of Thought Reasoning</a> demonstrates how robots can benefit 
+from multi-step reasoning grounded in their environment. Simultaneously, research on <a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a>
+indicates that large Vision and Language Models (VLMs) are often undertrained and could benefit from more diverse and informative data. This motivates a central question: 
+can a VLM autonomously construct its own learning curriculum?
+I envision a framework where a VLM, after each training epoch, engages in a form of "self-reflection" to identify areas of weakness. 
+Specifically, the model could analyze its performance on the training corpus, using metrics like loss or prediction uncertainty, 
+to pinpoint examples or types of examples where it struggles. 
+Inspired by embodied CoT, the model would then "think through" 
+which of these challenging examples are most informative for improving its performance.
+
+This selection process can be framed as a sequence of binary decisions across examples in the training corpus, effectively a Bernoulli distribution 
+parameterized by the model's assessment of each example's informativeness.
+The key action is then to bootstrap an internet-scale dataset for the next training epoch, based on these binary decisions.
+This bootstrapped dataset can be viewed as a distribution over tasks, where each "task" is loosely defined as a skill or capability implicitly learned from a subset of the
+data (e.g., understanding specific visual concepts, performing a type of reasoning, or handling a particular linguistic structure). 
+This framing naturally lends itself to the application of <a href="https://arxiv.org/pdf/1703.03400">Model Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a>, 
+enabling the model to adapt and improve its performance on this self-constructed curriculum.
+This approach is reminiscent of the self-improvement loop that characterizes human learning and has the potential to significantly enhance the data efficiency and generalizability
+of foundation models. However, it also presents key challenges, such as the potential for amplifying biases present in the initial training data and the computational cost of the 
+self-reflection and data selection processes.
 </p>
 </div>
 </div>
