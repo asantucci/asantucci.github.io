@@ -361,7 +361,7 @@ $(document).ready(function () {
                 <p>
                     I am a computational statistician, with a background in causal
                     inference and machine learning. Currently, I develop Generative AI
-                    software at <a href="http://www.unofficialgoogledatascience.com/">Google</a>.
+                    software at Google.
                     Previously, I also lectured a sequence of graduate-level
                     scientific-computing courses at Stanford University.
                     With my unique blend of academic, teaching, and industry experience, I aspire to contribute to the 
@@ -484,11 +484,10 @@ images. I believe that a collaboration with professors like <a href="https://ai.
 <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a> would be immensely valuable and impactful; both individuals have published seminal works on foundation models, and additionally robotics.
 
 </div>
-<div id="example-area-of-work" class="section level4">
-<h4 id="bootstrap-foundation-model">Example Area of Research - Bootstrapping Foundation Models</h4>
+<div id="example-idea-for-research" class="section level4">
+<h4 id="bootstrap-foundation-model">Example Idea for Research - Bootstrapping Foundation Models</h4>
 <p>
-Recent work on <a href="https://arxiv.org/pdf/2407.08693">Robotic Control via Embodied Chain of Thought Reasoning</a> demonstrates how robots can benefit 
-from multi-step reasoning grounded in their environment. Simultaneously, research on <a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a>
+Research on <a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a>
 indicates that large Vision and Language Models (VLMs) are often undertrained and could benefit from more diverse and informative data. 
 A corollary is that given finite resource constraints, the composition of the training data matters a lot for final model quality. 
 This motivates a central question: 
@@ -496,8 +495,9 @@ can a VLM autonomously construct its own learning curriculum?
 I envision a framework where a VLM, after each training epoch, engages in a form of "self-reflection" to identify areas of weakness. 
 Specifically, the model could analyze its performance on the training corpus, using metrics like prediction uncertainty or entropy (in the style of <a href="https://arxiv.org/abs/2311.08401">Reference-Free Confidence-Based Truthfulness Estimation</a>)
 to pinpoint examples or types of examples where it struggles. 
-Inspired by embodied CoT, the model would then "think through" 
-which of these challenging examples are most informative for improving its performance.
+Inspired by <a href="https://arxiv.org/pdf/2407.08693">Robotic Control via Embodied Chain of Thought Reasoning</a>, the model would then "think through" 
+which of these challenging examples are most informative for improving its performance, perhaps based on an evaluation benchmark which contextualizes the knowledge of the model in
+an applied scenario.
 
 This selection process can be framed as a sequence of binary decisions across examples in the training corpus, effectively a Bernoulli distribution 
 parameterized by the model's assessment of each example's informativeness.
