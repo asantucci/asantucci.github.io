@@ -485,28 +485,29 @@ images. I believe that a collaboration with professors like <a href="https://ai.
 
 </div>
 <div id="example-idea-for-research" class="section level4">
-<h4 id="bootstrap-foundation-model">Example Idea for Research - Bootstrapping Foundation Models</h4>
+<h4 id="bootstrap-foundation-model">Example Idea for Research - Bootstrapping a Learning Curriculum for Foundation Models</h4>
 <p>
 Research on <a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a>
 indicates that large Vision and Language Models (VLMs) are often undertrained and could benefit from more diverse and informative data. 
 A corollary is that given finite resource constraints, the composition of the training data matters a lot for final model quality. 
 This motivates a central question: 
-can a VLM autonomously construct its own learning curriculum?
+can a VLM autonomously construct its own learning curriculum? This is an important research question in the age of LLM's, which are notoriously expensive to train on
+internet-scale datasets. Instead of treating each training observation equally after each passing epoch, what if we focused more attention onto "harder" examples? This might positively affect
+model quality, or it might make training more efficient for a fixed quality outcome.
+
 I envision a framework where a VLM, after each training epoch, engages in a form of "self-reflection" to identify areas of weakness. 
 Specifically, the model could analyze its performance on the training corpus, using metrics like prediction uncertainty or entropy (in the style of <a href="https://arxiv.org/abs/2311.08401">Reference-Free Confidence-Based Truthfulness Estimation</a>)
 to pinpoint examples or types of examples where it struggles. 
 Inspired by <a href="https://arxiv.org/pdf/2407.08693">Robotic Control via Embodied Chain of Thought Reasoning</a>, the model would then "think through" 
 which of these challenging examples are most informative for improving its performance, perhaps based on an evaluation benchmark which contextualizes the knowledge of the model in
-an applied scenario.
+an applied scenario. During the next epoch, the observations could be randomly selected for inclusion (characterized by a Bernoulli distribution parameterized by the model's
+assessment of the example's informativeness).
 
-This selection process can be framed as a sequence of binary decisions across examples in the training corpus, effectively a Bernoulli distribution 
-parameterized by the model's assessment of each example's informativeness.
-The key action is then to bootstrap an internet-scale dataset for the next training epoch, based on these binary decisions.
 This bootstrapped dataset can be viewed as a distribution over tasks, where each "task" is loosely defined as a skill or capability implicitly learned from a subset of the
 data (e.g., understanding specific visual concepts, performing a type of reasoning, or handling a particular linguistic structure). 
 This framing naturally lends itself to the application of <a href="https://arxiv.org/pdf/1703.03400">Model Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a>, 
-enabling the model to adapt and improve its performance on this self-constructed curriculum. This approach is reminiscent of the self-improvement loop that characterizes human learning.
-Key concerns with this framework might be potential for amplifying biases in the pretraining data and the cost of the self-reflection process.
+enabling the model to learn efficiently and still be useful for downstream fine-tuning. This approach is also reminiscent of the self-improvement loop that characterizes human learning
+(humans implicitly focus on "harder and harder examples" when learning new skills).
 </p>
 </div>
 </div>
