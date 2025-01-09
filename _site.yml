@@ -24,3 +24,4 @@ output:
   html_document:
     theme: paper
     css: 'styles.css'
+google_analytics: G-79YM4CPY0Z
