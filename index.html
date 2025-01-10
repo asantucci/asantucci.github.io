@@ -491,6 +491,8 @@ research is ripe for fruition, specifically at the intersection of robotics and 
 that robotic agency becomes both practical and extremely useful once we have foundation models which can be queried with natural language and
 images. I believe that a collaboration with professors like <a href="https://ai.stanford.edu/~cbfinn/">Chelsea Finn</a> and
 <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a> would be immensely valuable and impactful; both individuals have published seminal works on foundation models.
+I'm also very interested in meta-learning, because of its practical importance when training VLM's; our modern day models have grown so large that it's hard to ignore
+opportunities for making learning more efficient.
 
 </div>
 <div id="example-idea-for-research" class="section level4">
@@ -502,7 +504,7 @@ A corollary is that given finite resource constraints, the composition of the tr
 This motivates a central question: 
 can a VLM autonomously construct its own learning curriculum? This is an important research question in the age of LLM's, which are notoriously expensive to train on
 internet-scale datasets. Instead of treating each training observation equally after each passing epoch, what if we focused more attention onto "harder" examples? This might positively affect
-model quality, or it might make training more efficient for a fixed quality outcome.
+model quality, or it might make training more efficient for a fixed quality outcome. This is reminiscent and inspired by ideas in the literature from <a href="https://arxiv.org/abs/1206.5538">representation learning</a>.
 </p>
 <p>
 I envision a framework where a VLM, after each training epoch, engages in a form of "self-reflection" to identify areas of weakness. 
@@ -511,10 +513,11 @@ to pinpoint examples or types of examples where it struggles.
 Inspired by <a href="https://arxiv.org/pdf/2407.08693">Robotic Control via Embodied Chain of Thought Reasoning</a>, the model would then "think through" 
 which of these challenging examples are most informative for improving its performance, perhaps based on an evaluation benchmark which contextualizes the knowledge of the model in
 an applied scenario. During the next epoch, the observations could be randomly selected for inclusion (characterized by a Bernoulli distribution parameterized by the model's
-assessment of the example's informativeness).
+assessment of the example's informativeness). With each passing epoch, the model has a chance to focus on different types of examples based on its weaknesses. Another way to look at it is:
+since foundation models are undertrained, we can explore the idea of interweaving lightweight evaluation within our training loop without excessive worry of overfitting.
 </p>
 <p>
-This bootstrapped dataset can be viewed as a distribution over tasks, where each "task" is loosely defined as a skill or capability implicitly learned from a subset of the
+The "bootstrapped" dataset (technically sampled without replacement) can be viewed as a distribution over tasks, where each "task" is loosely defined as a skill or capability implicitly learned from a subset of the
 data (e.g., understanding specific visual concepts, performing a type of reasoning, or handling a particular linguistic structure). 
 This framing naturally lends itself to the application of <a href="https://arxiv.org/pdf/1703.03400">Model Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a>, 
 enabling the model to learn efficiently and still be useful for downstream fine-tuning. This approach is also reminiscent of the self-improvement loop that characterizes human learning
