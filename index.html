@@ -504,7 +504,8 @@ A corollary is that given finite resource constraints, the composition of the tr
 This motivates a central question: 
 can a VLM autonomously construct its own learning curriculum? This is an important research question in the age of LLM's, which are notoriously expensive to train on
 internet-scale datasets. Instead of treating each training observation equally after each passing epoch, what if we focused more attention onto "harder" examples? This might positively affect
-model quality, or it might make training more efficient for a fixed quality outcome. This is reminiscent and inspired by ideas in the literature from <a href="https://arxiv.org/abs/1206.5538">representation learning</a>.
+model quality, or it might make training more efficient for a fixed quality outcome. This is reminiscent and inspired by ideas in the literature from active learning (wherein we might choose to train
+on examples with higher prediction uncertainty as a way to take larger step sizes for a fixed learning rate within a gradient descent update).
 </p>
 <p>
 I envision a framework where a VLM, after each training epoch, engages in a form of "self-reflection" to identify areas of weakness. 
