@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM Training Framework | Andreas Santucci</title>
+
+  <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+
+  <style>
+    .main-container { max-width: 940px; margin: auto; }
+    h1, h2, h3 { margin-top: 30px; }
+    code { background-color: rgba(0, 0, 0, 0.04); }
+    pre { background-color: #f8f8f8; padding: 10px; border-radius: 4px; }
+  </style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">Andreas Santucci</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="Education.html">Education</a></li>
+        <li><a href="Work_Experience.html">Work Experience</a></li>
+        <li><a href="Teaching.html">Teaching</a></li>
+        <li><a href="Research.html">Research</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="mailto:santucci.andreas@gmail.com"><span class="fa fa-envelope"></span></a></li>
+        <li><a href="https://github.com/asantucci"><span class="fa fa-github"></span></a></li>
+        <li><a href="https://www.linkedin.com/in/santucciandreas/"><span class="fa fa-linkedin"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<h1>Building a Minimal LLM Pretraining Framework</h1>
+
+<p>Over the past several weeks, I developed a fully functional, self-contained codebase for training large language models (LLMs) from scratch. Rather than relying on large frameworks, I focused on re-implementing core mechanisms of transformer models using only PyTorch.</p>
+
+<h2>Key Features</h2>
+<ul>
+  <li>Pretraining loops with checkpointing, validation, mixed-precision training, and gradient accumulation.</li>
+  <li>Transformer architectures with rotary position embeddings (RoPE), normalized position embeddings (NOPE), multi-head attention, and feedforward MLPs.</li>
+  <li>Mixture of Experts (MoE) models with both shared and routed expert configurations.</li>
+  <li>KV (key-value) caching for efficient decoding.</li>
+  <li>Parameter-efficient fine-tuning support (e.g., LoRA).</li>
+  <li>Streaming dataset loading via Hugging Face Datasets.</li>
+  <li>Config-driven architecture scaling from small models to billion-parameter systems.</li>
+</ul>
+
+<h2>Why Build a Framework?</h2>
+
+<p>Modern LLM research often abstracts away crucial design decisions behind large-scale libraries. By re-implementing from first principles, this project:</p>
+<ul>
+  <li>Deepens intuition about architecture and optimization trade-offs.</li>
+  <li>Provides a lightweight platform for experimenting with novel methods.</li>
+  <li>Surfaces internals that are often hidden, enabling easier debugging and extension.</li>
+</ul>
+
+<h2>Example Usage</h2>
+
+<p>Launching training after setup is as simple as:</p>
+
+<pre><code>uv run python3 train/pretrain.py \
+  --hf-dataset-name="roneneldan/TinyStories" \
+  --batch-size=8 \
+  --seq-len=512 \
+  --learning-rate=2e-4 \
+  --out-dir="checkpoints/pretrain_medium" \
+  --model-config-path="config/medium_pretrain.json" \
+  --max-train-steps=10000 \
+  --dtype=bfloat16
+</code></pre>
+
+<p>Model size, architecture, and training hyperparameters are all controlled through a JSON config file.</p>
+
+<h2>Design Choices and Scope</h2>
+
+<ul>
+  <li><strong>Single GPU focus</strong>: No multi-node or distributed training (by design).</li>
+  <li><strong>Tokenizer abstraction</strong>: Integrates existing Hugging Face tokenizers without custom pre-tokenization pipelines.</li>
+  <li><strong>Dataset modularity</strong>: Assumes datasets are loaded via Hugging Face for simplicity and portability.</li>
+</ul>
+
+<h2>Repository Link</h2>
+
+<p>The full codebase, setup instructions, and examples are available here:</p>
+
+<p><a href="#">GitHub: asantucci/llm</a></p>
+
+</div>
+
+</div>
+
+</body>
+</html>
