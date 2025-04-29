@@ -308,16 +308,7 @@ $(document).ready(function () {
 
 <p>Launching training after setup is as simple as:</p>
 
-<pre><code>uv run python3 train/pretrain.py \
-  --hf-dataset-name="roneneldan/TinyStories" \
-  --batch-size=8 \
-  --seq-len=512 \
-  --learning-rate=2e-4 \
-  --out-dir="checkpoints/pretrain_medium" \
-  --model-config-path="config/medium_pretrain.json" \
-  --max-train-steps=10000 \
-  --dtype=bfloat16
-</code></pre>
+<pre><code>uv run python3 train/pretrain.py</code></pre>
 
 <p>Model size, architecture, and training hyperparameters are all controlled through a JSON config file.</p>
 
