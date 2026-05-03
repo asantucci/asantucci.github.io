@@ -1,529 +1,349 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-79YM4CPY0Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  gtag('config', 'G-79YM4CPY0Z');
-</script>
-<meta name="google-site-verification" content="n0Z7rdeTG9ylbMu2tfdA21yNbpfk3W9G7oRojFH4IR4" />
+  <title>Andreas Santucci — Research Scientist</title>
+  <meta name="description" content="Andreas Santucci is a Research Scientist at Granica working on approximate leave-one-out methods and Large Tabular Models. Previously: Generative AI at Google, Lecturer at Stanford ICME." />
+  <meta name="author" content="Andreas Santucci" />
 
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Andreas Santucci — Research Scientist" />
+  <meta property="og:description" content="Research Scientist at Granica. Previously Generative AI at Google and Lecturer at Stanford ICME. Causal inference, ML, and large-scale model development." />
+  <meta property="og:image" content="https://asantucci.github.io/images/profile.jpg" />
+  <meta property="og:url" content="https://asantucci.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@andreassantucci" />
 
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238b2e2a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23fbfaf7' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+  <link rel="canonical" href="https://asantucci.github.io/" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
+  <link rel="stylesheet" href="styles.css" />
 
-<title>Andreas Santucci's Research</title>
-
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="styles.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-.profile-container {
-    display: flex;
-    align-items: flex-start;
-    max-width: 800px;
-    margin: 0 auto;
-    gap: 20px; /* Space between the image and text */
-}
-
-.profile-image {
-    flex: 1; /* Image takes 1/3 of the width */
-    max-width: 33%;
-}
-
-.profile-image img {
-    width: 100%; /* Let the image adjust to the container width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: Rounded corners for better appearance */
-}
-
-.profile-text {
-    flex: 2; /* Text takes 2/3 of the width */
-    text-align: justify;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .profile-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .profile-image {
-        max-width: 100%; /* Full width on smaller screens */
-    }
-    .profile-image img {
-        max-height: 200px; /* Limit height further on small screens */
-    }
-}
-</style>
-
-<style>
-       #summary h1 {
-              text-align: center;
-              width: 67%
-              margin: 20px auto;
-              font-size: 2vw;
-              line-height: 1.2;
-       }
-.project-involvement {
-    font-size: 0.8em; /* Smaller font size relative to the main header */
-    color: gray; /* Lighter color to de-emphasize the text */
-    font-style: italic; /* Optional: Makes the text appear distinct */
-    margin-left: 10px; /* Adds space between the main title and the involvement text */
-}
-</style>
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-79YM4CPY0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-79YM4CPY0Z');
+  </script>
+  <meta name="google-site-verification" content="n0Z7rdeTG9ylbMu2tfdA21yNbpfk3W9G7oRojFH4IR4" />
 </head>
-
 <body>
 
+<header class="site-header">
+  <nav class="nav" id="primary-nav">
+    <a href="index.html" class="nav-brand">Andreas Santucci</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">About</a></li>
+      <li><a href="Research.html">Research</a></li>
+      <li><a href="llm.html">Mini-LLM</a></li>
+      <li><a href="Work_Experience.html">Experience</a></li>
+      <li><a href="Teaching.html">Teaching</a></li>
+      <li><a href="Education.html">Education</a></li>
+    </ul>
+    <ul class="nav-social">
+      <li><a href="mailto:santucci.andreas@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5Zm2.4.4 7.6 5.7 7.6-5.7H4.4ZM20 7.5l-7.4 5.5a1 1 0 0 1-1.2 0L4 7.5V19h16V7.5Z"/></svg>
+      </a></li>
+      <li><a href="https://github.com/asantucci" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12.02c0 5.09 3.29 9.4 7.86 10.93.57.11.78-.25.78-.55 0-.27-.01-.99-.02-1.95-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.78 0c2.21-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.8 1.18 1.82 1.18 3.08 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.13 0 1.54-.01 2.78-.01 3.16 0 .31.21.67.79.55C20.22 21.4 23.5 17.1 23.5 12.02 23.5 5.65 18.35.5 12 .5Z"/></svg>
+      </a></li>
+      <li><a href="https://www.linkedin.com/in/santucciandreas/" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.22 8h4.56v14.5H.22V8Zm7.4 0h4.37v1.98h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v7.88h-4.56v-6.99c0-1.67-.03-3.81-2.32-3.81-2.32 0-2.68 1.81-2.68 3.69v7.11H7.62V8Z"/></svg>
+      </a></li>
+      <li><a href="https://twitter.com/andreassantucci" aria-label="Twitter">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2H21.5l-7.5 8.57L23 22h-6.81l-5.34-6.98L4.78 22H1.52l8.02-9.16L1 2h6.91l4.83 6.39L18.244 2Zm-2.39 18h1.86L7.27 4H5.27l10.585 16Z"/></svg>
+      </a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="container-fluid main-container">
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+<main>
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Andreas Santucci</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="llm.html">Mini-LLM</a>
-</li>
-<li>
-  <a href="Education.html">Education</a>
-</li>
-<li>
-  <a href="Work_Experience.html">Work Experience</a>
-</li>
-<li>
-  <a href="Teaching.html">Teaching</a>
-</li>
-<li>
-  <a href="Research.html">Research</a>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="mailto:santucci.andreas@gmail.com">
-    <span class="fa fa-envelope fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://github.com/asantucci">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://twitter.com/andreassantucci">
-    <span class="fa fa-twitter fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://www.linkedin.com/in/santucciandreas/">
-    <span class="fa fa-linkedin fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
 
-<div id="header">
+    <section class="hero">
+      <div class="hero-photo">
+        <img src="images/profile.jpg" alt="Andreas Santucci" />
+      </div>
+      <div class="hero-body">
+        <h1>Andreas Santucci</h1>
+        <p class="hero-tagline">
+          Research Scientist at <a href="https://granica.ai/">Granica</a>,
+          working with <a href="https://web.stanford.edu/~montanar/">Andrea Montanari</a>
+          on approximate leave-one-out methods for non-convex learners and on Large Tabular Models.
+        </p>
+        <p class="hero-actions">
+          <a class="btn btn-primary" href="files/santucci_andreas.pdf">CV (PDF)</a>
+          <a class="btn" href="mailto:santucci.andreas@gmail.com">Email</a>
+          <a class="btn" href="https://github.com/asantucci">GitHub</a>
+        </p>
+      </div>
+    </section>
 
+    <section id="about">
+      <p>
+        I&rsquo;m a computational statistician with a background in causal inference and machine
+        learning. Before joining Granica, I built generative-AI systems at Google
+        and lectured graduate scientific-computing courses at Stanford ICME.
+        My work sits at the boundary between rigorous statistical methodology and the
+        engineering of large-scale models.
+      </p>
+      <p>
+        I&rsquo;m currently focused on two questions: how to predict out-of-sample error in
+        non-convex settings without retraining, and how to build foundation models for
+        tabular data that respect column semantics.
+      </p>
+    </section>
 
+    <section id="current">
+      <p class="section-eyebrow">Currently</p>
+      <h2 class="section-title">Active Research</h2>
 
+      <div class="card-grid">
+        <article class="card">
+          <p class="card-meta">Granica · 2025–</p>
+          <h3 class="card-title">Approximate Leave-One-Out for non-convex models</h3>
+          <p class="card-desc">
+            Estimating LOO Hessians via low-rank updates of the full-sample Hessian,
+            masking eigen-directions associated with negative curvature. Prediction error
+            for single-index DGPs with mismatched Teacher–Student stays within single-digit percent.
+          </p>
+        </article>
 
-</div>
+        <article class="card">
+          <p class="card-meta">Granica · 2025–</p>
+          <h3 class="card-title">Large Tabular Models</h3>
+          <p class="card-desc">
+            Incorporating column semantics into foundation models for tabular data, and
+            measuring dataset generalization via per-example permutation of columns.
+          </p>
+        </article>
+      </div>
+    </section>
 
+    <section id="experience">
+      <p class="section-eyebrow">Trajectory</p>
+      <h2 class="section-title">Experience</h2>
 
-<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
-    <div id="summary" class="section level1">
-        <div class="profile-container">
-            <div class="profile-image">
-                <img src="images/profile.jpg" alt="Andreas Santucci">
-            </div>
-            <div class="profile-text">
-                <h1>Research Profile</h1>
-                <p>
-                    I am a computational statistician, with a background in causal
-                    inference and machine learning. Currently, I develop Generative AI
-                    software at Google.
-                    Previously, I also lectured a sequence of graduate-level
-                    scientific-computing courses at Stanford University.
-                    With my unique blend of academic, teaching, and industry experience, I aspire to contribute to the 
-                    academic community by publishing innovative work and mentoring the next generation of researchers.
-                    With over a decade of impactful research experience at world-renowned institutions such as Stanford, 
-                    Google, and Berkeley, I am confident in my ability to continue pioneering contributions in AI/ML.
-                </p>
-            </div>
-        </div>
-    </div>
+      <ol class="timeline">
 
-<div id="undergraduate" class="section level3">
-<h3>Undergraduate (2012)<span class="project-involvement">(first author)</span></h3>
-<p>My research journey began with my B.A. thesis in Economics at U.C. Berkeley, advised by <a href="https://econ.washington.edu/people/gregory-m-duncan">Gregory Duncan</a>, where I came up with a quasi-experiment framework 
-to answer the question, “what’s the causal effect of sports participation on GPA’s?” (<a href="https://econ.berkeley.edu/sites/default/files/Santucci.pdf">thesis writing sample</a>). This was a practical question of 
-interest to me as a student athlete. I used STATA to analyze Average Treatment Effects, 
-and the quasi-experiment involved looking toward student-athletes who either walked onto the team midway 
-through their collegiate career, or who got injured midway through their collegiate sports career and then were forced to no longer play sport 
-(*in either case, we get to observe the scholastic performance for the same individual, partitioned by participation in sport). 
-I found that football players with low incoming SAT scores were likely to have their grades increased by 0.8 grade points as a function of being a student-athlete, 
-whereas for women’s crew the effect was reversed: participating in sports decreased their GPA’s by almost 1/2 a grade point. 
-The intuition here is partly a regression to the (global) mean, but also can be explained by minimum grade requirements for being eligible to compete at the NCAA level, 
-and access to tutors. Being able to answer a meaningful and practically significant question of interest is what inspired my career of research.
-</p>
-</div>
-<div id="graduate" class="section level3">
-<h3>Econ Consulting (2012-'14)<span class="project-involvement">(primary individual contributor)</span></h3>
-<p>
-For several years after graduation, I worked with <a href="https://econ.berkeley.edu/profile/daniel-l-mcfadden">Daniel McFadden</a>, 
-Nobel laureate and founder of the logistic regression model, 
-on estimating causal damages from the 2010 Gulf Oil Spill. 
-In particular, I was the core contributor for procuring R code to support Dan’s expert testimony on how the spill affected tourism in the Gulf. 
-We constructed a discrete choice model to infer the value of lost visitation to the Gulf, based in part on proprietary survey data. 
-A national level survey with data from over 26,000 households traveling to almost 40,000 unique destinations was collected 
-in order to estimate the value of taking a trip to a particular location, conditional on demographic characteristics of the 
-trip participants as well as destination specific features. I used Python to create two
-giant “time” and “distance” travel cost matrices, each containing the cost, in minutes or miles, for
-all combinations of travelers and trips in the survey.
-From this, it was possible to estimate e.g. what the cost of driving and flying was per mile of travel. 
-When we put together travel costs with lost visitation from beach surveys, we were able to come up with a bottom-line number for the impact of the 
-spill on visitation and the financial implications to surrounding counties. I used ArcGIS to map out the fiscal impacts as a function of 
-geographic location across all 3,000+ counties in the US.
-</p>
-<h3>Graduate (2014-'17)<span class="project-involvement">(equal contribution, research intern, and first author respectively)</span></h3>
-<p>
-At Stanford, I earned an M.S. in Computational Mathematics (GPA 3.96). 
-After earning an A+ in a project-based Distributed Algorithms course, 
-I worked with Professor <a href="https://stanford.edu/~rezab/">Reza Zadeh</a> on a distributed min-cut algorithm for the remainder of the summer. 
-Although we didn’t publish, it was an excellent exercise in research (<a href="files/rd.pdf">draft paper</a>). I was also afforded a research internship
-at Lawrence Livermore National Lab, where I worked with Kaiser Research on Sepsis prognosis using machine learned models and bayesian methods (<a href="https://www.atsjournals.org/doi/epdf/10.1164/ajrccm-conference.2016.193.1_MeetingAbstracts.A2714?role=tab">example publication</a>).
-</p>
-<p>
-For my M.S. thesis, I worked under the supervision of esteemed economist <a href="https://www.gsb.stanford.edu/faculty-research/faculty/guido-w-imbens">Guido Imbens</a> (now Nobel Laureate). 
-My work applied causal inference with machine learning toward sports analytics, receiving an A+ for its creativity and rigor (<a href="https://arxiv.org/abs/2412.21181">thesis publication</a>). 
-Specifically, we analyzed bookmaker’s odds of meeting the spread, i.e. the expected score differential between two teams, and used this as a conditioner 
-on which we could observe unanticipated effects (<a href="files/meet_the_spread.pdf">rationale</a>). We measured the nightlife index within a city using Bureau of Labor Statistics census data 
-on the number of musical recording studios and entertainment clubs within the locale (<a href="files/Party_by_Team_Location.pdf">distribution of nightlife</a>). 
-We then filtered our attention to cases where games are played back-to-back within 24 hours of each other; to the
-extent that next-day opponent is uncorrelated with exposure to treatment, we have identification in our variable of interest (<a href="files/next_day_opponent_mlb.pdf">heatmap</a>).
-Teams visiting cities with higher nightlife indices consistently underperformed against bookmaker expectations, revealing a novel pattern in sports analytics. 
-We replicate our analysis and find consistent results in two different sports: NBA and MLB.
-As a robustness check, we also verify that the hangover effect dissipates when players rest more than 24 hours after visiting a city with an active nightlife index.
-Assessing the strategy in the online marketplace validated the predictive power of our model (<a href="files/mlb_bets_by_season.pdf">online performance</a>).
-</p>
-</div>
-<div id="lecturing" class="section level3">
-<h3>Stanford (2017-2023) <span class="project-involvement">(lecturer)</span></h3>
-<p>
-After graduating, I was asked by the Director of <a href="https://icme.stanford.edu/">ICME</a>, <a href="https://profiles.stanford.edu/margot-gerritsen">Margot Gerritsen</a>, to serve as a Lecturer for my alma mater; 
-for the next seven years, in addition to my full time role(s) within industry, 
-I concurrently taught graduate courses in Python and C++ to nearly 200 students annually. 
-I managed a staff of at least 4 TA’s each quarter, and I was awarded “Best Lecturer” 3 separate years, 
-as determined by students and fellow faculty. I also led programming workshops and interview preparation sessions, 
-honing my ability to distill complex ideas and fostering a passion for teaching that I hope to continue in a faculty role after completing my PhD. 
-I’m confident that skills I garnered as a lecturer will be useful in describing my research in front of large audiences.</p>
-<div id="google-research" class="section level3">
-<h3>Google (2018-present)<span class="project-involvement">(founding engineer, core contributor, and founding engineer respectively)</span></h3>
-<p>
-At YouTube, I developed recommendation algorithms that transitioned from heuristic to machine-learned strategies, contributing 
-significantly as a founding engineer on YouTube Shorts. Concretely, while we started with a deterministic triggering and ranking strategy 
-(i.e. always placing the Shorts “shelf” in the same position within the feed for all users), over the course of several years I developed and iteratively refined 
-a reward model to capture how much value the Shelf delivers on a per-user basis, and then created a probabilistic model to show the shelf with a 
-probability that is proportional to the estimated long(er) term value. My foundations in distributed algorithms allowed me to personally implement my 
-own ideas into production using C++.
-</p>
-<p>The <a href="https://arxiv.org/pdf/2312.11805v4">Gemini 1.5
-Technical Report</a> captured the attention of the scientific community (garnering over 2,000 citations in the past year). 
-As part of the core team, I created a “self-critique” framework for LLM evaluation that was consistent with human raters, and was recognized on the 1.5 technical report accordingly.
-The mechanism for evaluation was a side-by-side framework comparing two different model responses to a given prompt.
-The most effective way to obtain reliable and interpretable results was to embed explicit rubrics within the instruction set
-to the agent. Using few-shot learning, we were able to engineer a machine-learned rater with inter-rater reliability
-that was at least as good as the average human-rater.
-After creating a satisfactory evaluation framework, I then became interested with combining the results from
-human-raters, comprising ground truth labels, with predictions for model quality from the agent in a way that sensibly
-augments our evaluation dataset.
-Specifically, I proposed using <a href="https://projecteuclid.org/journals/statistical-science/volume-32/issue-2/Model-Assisted-Survey-Estimation-with-Modern-Prediction-Techniques/10.1214/16-STS589.pdf">Model Assisted Estimation</a> within the LLM self-critique framework: this allows us to refine
-a model based estimate with an offset factor that captures the expected bias, yielding an overall unbiased estimator with
-reduced variance. In other words, instead of using just an LLM score for model quality, or alternatively just using a human rater based score,
-I came up with a way to combine the two sets of data meaningfully and in a statistically rigorous way.
-</p>
-<p>
-Most recently, my work in Generative AI has focused on media algorithms and spatial Super Resolution.
-In order to tackle a new domain, I started with a literature review focusing on seminal papers such as <a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a>, 
-<a href="https://arxiv.org/abs/2010.11929">Vision Transformer</a>, and <a href="https://arxiv.org/abs/2103.15691">Video Vision Transformer</a>. 
-Additionally, I found <a href="https://arxiv.org/abs/2006.11239">Denoising Diffusion Probabilistic Models</a> to be quite relevant.
-I then personally implemented a Diffusion Transformer for video enhancement, i.e. 
-a <a href="https://arxiv.org/abs/2405.07648">Content-Aware Degradation-Driven Transformer</a> (inspired by the latest research). As the sole author of the
-prototype algorithm, I acquired significant experience architecting neural networks using <a href="https://jax.readthedocs.io/">JAX</a> primitives.
-</p>
-</div>
-</div>
-</div>
+        <li class="timeline-item">
+          <div class="timeline-meta">2025 – present</div>
+          <div class="timeline-body">
+            <h3>Research Scientist <span class="org">· Granica</span><span class="timeline-role">Research</span></h3>
+            <p>
+              Working directly with Chief of Science Andrea Montanari (Stanford EE / Statistics)
+              on approximate LOO for non-convex learners and on Large Tabular Models.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-meta">2018 – 2025</div>
+          <div class="timeline-body">
+            <h3>Generative AI Engineer <span class="org">· Google</span><span class="timeline-role">Founding Eng</span></h3>
+            <p>
+              Founding engineer on YouTube Shorts: built the reward model and probabilistic
+              shelf-triggering policy that replaced the original deterministic placement,
+              implemented in production C++.
+            </p>
+            <p>
+              Core contributor to the <a href="https://arxiv.org/pdf/2312.11805v4">Gemini 1.5 Technical Report</a>:
+              designed a self-critique LLM evaluation framework with embedded rubrics,
+              and proposed
+              <a href="https://projecteuclid.org/journals/statistical-science/volume-32/issue-2/Model-Assisted-Survey-Estimation-with-Modern-Prediction-Techniques/10.1214/16-STS589.pdf">model-assisted estimation</a>
+              to combine human-rater labels with LLM scores into an unbiased, lower-variance estimator.
+            </p>
+            <p>
+              Most recently: implemented a Diffusion Transformer for video super-resolution,
+              following <a href="https://arxiv.org/abs/2405.07648">CDDT</a>, written in JAX as sole author of the prototype.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-meta">2017 – 2023</div>
+          <div class="timeline-body">
+            <h3>Lecturer <span class="org">· Stanford ICME</span><span class="timeline-role">Teaching</span></h3>
+            <p>
+              Taught graduate Python (CME 211) and C++ (CME 212) to ~200 students per year
+              alongside my industry role. Managed staffs of 4+ TAs per quarter. Awarded
+              <em>Best Lecturer</em> in three separate years by students and faculty.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-meta">2014 – 2017</div>
+          <div class="timeline-body">
+            <h3>M.S. Computational Mathematics <span class="org">· Stanford ICME</span><span class="timeline-role">Graduate</span></h3>
+            <p>
+              Thesis with <a href="https://www.gsb.stanford.edu/faculty-research/faculty/guido-w-imbens">Guido Imbens</a>
+              (Nobel 2021): a quasi-experimental causal estimate of post-nightlife
+              performance in NBA and MLB, validated against bookmaker spreads
+              (<a href="https://arxiv.org/abs/2412.21181">arXiv</a>).
+              Distributed min-cut work with <a href="https://stanford.edu/~rezab/">Reza Zadeh</a>
+              (<a href="files/rd.pdf">draft</a>); summer at Lawrence Livermore on
+              ML-based sepsis prognosis with Kaiser Research
+              (<a href="https://www.atsjournals.org/doi/epdf/10.1164/ajrccm-conference.2016.193.1_MeetingAbstracts.A2714?role=tab">abstract</a>).
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-meta">2012 – 2014</div>
+          <div class="timeline-body">
+            <h3>Research Analyst <span class="org">· The Brattle Group</span><span class="timeline-role">Industry</span></h3>
+            <p>
+              Primary contributor to the R codebase supporting Daniel McFadden&rsquo;s
+              expert testimony on causal damages from the 2010 Gulf Oil Spill.
+              Discrete-choice model over a 26,000-household / 40,000-destination travel survey;
+              fiscal impacts mapped across all 3,000+ U.S. counties.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-meta">2008 – 2012</div>
+          <div class="timeline-body">
+            <h3>B.A. Economics <span class="org">· U.C. Berkeley</span><span class="timeline-role">Undergrad</span></h3>
+            <p>
+              Honors thesis with <a href="https://econ.washington.edu/people/gregory-m-duncan">Gregory Duncan</a>:
+              a quasi-experimental estimate of the causal effect of NCAA D1 athletic participation on GPA
+              (<a href="https://econ.berkeley.edu/sites/default/files/Santucci.pdf">PDF</a>).
+              Found a +0.8 GPA effect for football players with low entering SAT scores;
+              the opposite sign (~&minus;0.5) for women&rsquo;s crew. Walked on to Cal Swimming &amp; Diving.
+            </p>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+
+    <section id="selected-work">
+      <p class="section-eyebrow">Selected Work</p>
+      <h2 class="section-title">Publications &amp; Projects</h2>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <p class="card-meta">Open Source · 2025</p>
+          <h3 class="card-title"><a href="llm.html">Mini-LLM Pretraining Framework</a></h3>
+          <p class="card-desc">
+            Self-contained PyTorch codebase for pretraining transformer LLMs from scratch:
+            RoPE/NoPE, MoE (shared and routed), KV caching, LoRA, mixed-precision and
+            gradient accumulation. Config-driven scaling from small to billion-parameter models.
+          </p>
+          <p class="card-links">
+            <a href="llm.html">Write-up →</a>
+            <a href="https://github.com/asantucci/language-model">GitHub →</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="card-meta">Technical Report · 2024</p>
+          <h3 class="card-title"><a href="https://arxiv.org/pdf/2312.11805v4">Gemini 1.5 Technical Report</a></h3>
+          <p class="card-desc">
+            Core contributor on LLM-as-judge evaluation. Designed a self-critique framework
+            with embedded rubrics achieving inter-rater reliability comparable to humans;
+            proposed model-assisted estimation to combine human and model scores.
+          </p>
+          <p class="card-links">
+            <a href="https://arxiv.org/pdf/2312.11805v4">arXiv →</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="card-meta">Preprint · 2024</p>
+          <h3 class="card-title"><a href="https://arxiv.org/abs/2412.21181">Hangover Effects in Professional Sports</a></h3>
+          <p class="card-desc">
+            Quasi-experiment using bookmaker spreads as a conditioner. Teams visiting cities
+            with higher nightlife indices consistently underperform expectations; effect
+            replicates across NBA and MLB and dissipates with rest &gt;24h.
+          </p>
+          <p class="card-links">
+            <a href="https://arxiv.org/abs/2412.21181">arXiv →</a>
+            <a href="files/meet_the_spread.pdf">Rationale</a>
+            <a href="files/mlb_bets_by_season.pdf">Online performance</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="card-meta">Conference Abstract · 2016</p>
+          <h3 class="card-title"><a href="https://www.atsjournals.org/doi/epdf/10.1164/ajrccm-conference.2016.193.1_MeetingAbstracts.A2714?role=tab">Sepsis Prognosis with Bayesian ML</a></h3>
+          <p class="card-desc">
+            Summer research at Lawrence Livermore National Laboratory with Kaiser Research:
+            machine-learned and Bayesian models for sepsis trajectory and prognosis from
+            EHR signals.
+          </p>
+          <p class="card-links">
+            <a href="https://www.atsjournals.org/doi/epdf/10.1164/ajrccm-conference.2016.193.1_MeetingAbstracts.A2714?role=tab">ATS Abstract →</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="card-meta">Thesis · 2012</p>
+          <h3 class="card-title"><a href="https://econ.berkeley.edu/sites/default/files/Santucci.pdf">Causal Effect of NCAA D1 Athletics on GPA</a></h3>
+          <p class="card-desc">
+            Honors thesis at U.C. Berkeley using walk-on entry and mid-career injury as
+            within-subject identification. Heterogeneous treatment effects by sport and
+            entering SAT.
+          </p>
+          <p class="card-links">
+            <a href="https://econ.berkeley.edu/sites/default/files/Santucci.pdf">PDF →</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="card-meta">Working Paper · 2015</p>
+          <h3 class="card-title"><a href="files/rd.pdf">Distributed Min-Cut</a></h3>
+          <p class="card-desc">
+            Draft from a summer of work with Reza Zadeh at Stanford on a distributed
+            algorithm for graph min-cut.
+          </p>
+          <p class="card-links">
+            <a href="files/rd.pdf">Draft PDF →</a>
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container-wide">
+    © 2026 Andreas Santucci ·
+    <a href="mailto:santucci.andreas@gmail.com">santucci.andreas@gmail.com</a>
+  </div>
+</footer>
+
 <script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  // Mobile nav toggle
   (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
+    var nav = document.getElementById('primary-nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.nav-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
   })();
 </script>
+
 </body>
 </html>

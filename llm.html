@@ -1,332 +1,160 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mini-LM</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+  <title>Mini-LLM Pretraining Framework — Andreas Santucci</title>
+  <meta name="description" content="A self-contained PyTorch codebase for pretraining transformer LLMs from scratch — RoPE, NoPE, MoE, KV caching, LoRA, mixed-precision training." />
+  <meta name="author" content="Andreas Santucci" />
 
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Mini-LLM Pretraining Framework" />
+  <meta property="og:description" content="A self-contained PyTorch codebase for pretraining transformer LLMs from scratch — RoPE, NoPE, MoE, KV caching, LoRA." />
+  <meta property="og:image" content="https://asantucci.github.io/images/profile.jpg" />
+  <meta property="og:url" content="https://asantucci.github.io/llm.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@andreassantucci" />
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238b2e2a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23fbfaf7' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+  <link rel="canonical" href="https://asantucci.github.io/llm.html" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
+  <link rel="stylesheet" href="styles.css" />
 
-
-
-
-<link rel="stylesheet" href="styles.css" type="text/css" />
-
-<style>
-       #summary h1 {
-              text-align: center;
-              width: 67%
-              margin: 20px auto;
-              font-size: 2vw;
-              line-height: 1.2;
-       }
-.project-involvement {
-    font-size: 0.8em; /* Smaller font size relative to the main header */
-    color: gray; /* Lighter color to de-emphasize the text */
-    font-style: italic; /* Optional: Makes the text appear distinct */
-    margin-left: 10px; /* Adds space between the main title and the involvement text */
-}
-</style>
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-79YM4CPY0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-79YM4CPY0Z');
+  </script>
 </head>
-
 <body>
 
+<header class="site-header">
+  <nav class="nav" id="primary-nav">
+    <a href="index.html" class="nav-brand">Andreas Santucci</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="Research.html">Research</a></li>
+      <li><a href="llm.html" class="active">Mini-LLM</a></li>
+      <li><a href="Work_Experience.html">Experience</a></li>
+      <li><a href="Teaching.html">Teaching</a></li>
+      <li><a href="Education.html">Education</a></li>
+    </ul>
+    <ul class="nav-social">
+      <li><a href="mailto:santucci.andreas@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5Zm2.4.4 7.6 5.7 7.6-5.7H4.4ZM20 7.5l-7.4 5.5a1 1 0 0 1-1.2 0L4 7.5V19h16V7.5Z"/></svg>
+      </a></li>
+      <li><a href="https://github.com/asantucci" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12.02c0 5.09 3.29 9.4 7.86 10.93.57.11.78-.25.78-.55 0-.27-.01-.99-.02-1.95-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.78 0c2.21-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.8 1.18 1.82 1.18 3.08 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.13 0 1.54-.01 2.78-.01 3.16 0 .31.21.67.79.55C20.22 21.4 23.5 17.1 23.5 12.02 23.5 5.65 18.35.5 12 .5Z"/></svg>
+      </a></li>
+      <li><a href="https://www.linkedin.com/in/santucciandreas/" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.22 8h4.56v14.5H.22V8Zm7.4 0h4.37v1.98h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v7.88h-4.56v-6.99c0-1.67-.03-3.81-2.32-3.81-2.32 0-2.68 1.81-2.68 3.69v7.11H7.62V8Z"/></svg>
+      </a></li>
+      <li><a href="https://twitter.com/andreassantucci" aria-label="Twitter">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2H21.5l-7.5 8.57L23 22h-6.81l-5.34-6.98L4.78 22H1.52l8.02-9.16L1 2h6.91l4.83 6.39L18.244 2Zm-2.39 18h1.86L7.27 4H5.27l10.585 16Z"/></svg>
+      </a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="container-fluid main-container">
-
-<style type="text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+<main>
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Andreas Santucci</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="llm.html">Mini Language Model</a>
-</li>
-<li>
-  <a href="Education.html">Education</a>
-</li>
-<li>
-  <a href="Work_Experience.html">Work Experience</a>
-</li>
-<li>
-  <a href="Teaching.html">Teaching</a>
-</li>
-<li>
-  <a href="Research.html">Research</a>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="mailto:santucci.andreas@gmail.com">
-    <span class="fa fa-envelope fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://github.com/asantucci">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://twitter.com/andreassantucci">
-    <span class="fa fa-twitter fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://www.linkedin.com/in/santucciandreas/">
-    <span class="fa fa-linkedin fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
 
+    <p class="section-eyebrow">Open-Source Project</p>
+    <h1>Mini-LLM Pretraining Framework</h1>
 
-<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
-    <div id="summary" class="section level1">
-        <div class="profile-container">
-            <div class="profile-text">
-              <h1>Building a Minimal LLM Pretraining Framework</h1>
+    <p>
+      A fully self-contained codebase for training transformer language models from scratch.
+      Rather than depending on large frameworks, the project re-implements the core mechanisms
+      of modern transformers using only PyTorch — the goal is to surface the design decisions
+      that production frameworks abstract away.
+    </p>
 
-<p>Over the past several weeks, I developed a fully functional, self-contained codebase for training large language models (LLMs) from scratch. Rather than relying on large frameworks, I focused on re-implementing core mechanisms of transformer models using only PyTorch.</p>
+    <ul class="tag-row">
+      <li class="tag">PyTorch</li>
+      <li class="tag">Transformers</li>
+      <li class="tag">MoE</li>
+      <li class="tag">RoPE / NoPE</li>
+      <li class="tag">LoRA</li>
+      <li class="tag">KV cache</li>
+    </ul>
 
-<h2>Key Features</h2>
-<ul>
-  <li>Pretraining loops with checkpointing, validation, mixed-precision training, and gradient accumulation.</li>
-  <li>Transformer architectures with rotary position embeddings (RoPE), normalized position embeddings (NOPE), multi-head attention, and feedforward MLPs.</li>
-  <li>Mixture of Experts (MoE) models with both shared and routed expert configurations.</li>
-  <li>KV (key-value) caching for efficient decoding.</li>
-  <li>Parameter-efficient fine-tuning support (e.g., LoRA).</li>
-  <li>Streaming dataset loading via Hugging Face Datasets.</li>
-  <li>Config-driven architecture scaling from small models to billion-parameter systems.</li>
-</ul>
+    <p>
+      <a class="btn btn-primary" href="https://github.com/asantucci/language-model">View on GitHub →</a>
+    </p>
 
-<h2>Why Build a Framework?</h2>
+    <h2>Key Features</h2>
+    <ul>
+      <li>Pretraining loops with checkpointing, validation, mixed-precision training, and gradient accumulation.</li>
+      <li>Transformer architectures with rotary position embeddings (RoPE), normalized position embeddings (NoPE), multi-head attention, and feedforward MLPs.</li>
+      <li>Mixture-of-Experts (MoE) models with both shared and routed expert configurations.</li>
+      <li>KV-cache for efficient autoregressive decoding.</li>
+      <li>Parameter-efficient fine-tuning (e.g. LoRA).</li>
+      <li>Streaming dataset loading via Hugging Face Datasets.</li>
+      <li>Config-driven scaling from small models to billion-parameter systems.</li>
+    </ul>
 
-<p>Modern LLM research often abstracts away crucial design decisions behind large-scale libraries. By re-implementing from first principles, this project:</p>
-<ul>
-  <li>Deepens intuition about architecture and optimization trade-offs.</li>
-  <li>Provides a lightweight platform for experimenting with novel methods.</li>
-  <li>Surfaces internals that are often hidden, enabling easier debugging and extension.</li>
-</ul>
+    <h2>Why Build This</h2>
+    <p>
+      Modern LLM research often hides crucial design decisions behind large-scale libraries.
+      Re-implementing from first principles:
+    </p>
+    <ul>
+      <li>Deepens intuition about architectural and optimization trade-offs.</li>
+      <li>Provides a lightweight platform for experimenting with novel methods.</li>
+      <li>Surfaces internals that are usually hidden, making debugging and extension easier.</li>
+    </ul>
 
-<h2>Example Usage</h2>
+    <h2>Usage</h2>
+    <p>Launching training after setup is one command:</p>
+    <pre><code>uv run python3 train/pretrain.py</code></pre>
+    <p>Model size, architecture, and training hyperparameters are all controlled through a JSON config file.</p>
 
-<p>Launching training after setup is as simple as:</p>
+    <h2>Scope &amp; Design Choices</h2>
+    <ul>
+      <li><strong>Single-GPU focus.</strong> No multi-node or distributed training — by design.</li>
+      <li><strong>Tokenizer abstraction.</strong> Integrates existing Hugging Face tokenizers without custom pre-tokenization pipelines.</li>
+      <li><strong>Dataset modularity.</strong> Datasets are loaded through Hugging Face for portability.</li>
+    </ul>
 
-<pre><code>uv run python3 train/pretrain.py</code></pre>
+    <h2>Repository</h2>
+    <p>
+      Full code, setup instructions, and examples:
+      <a href="https://github.com/asantucci/language-model">github.com/asantucci/language-model</a>
+    </p>
 
-<p>Model size, architecture, and training hyperparameters are all controlled through a JSON config file.</p>
+  </div>
+</main>
 
-<h2>Design Choices and Scope</h2>
+<footer class="site-footer">
+  <div class="container-wide">
+    © 2026 Andreas Santucci ·
+    <a href="mailto:santucci.andreas@gmail.com">santucci.andreas@gmail.com</a>
+  </div>
+</footer>
 
-<ul>
-  <li><strong>Single GPU focus</strong>: No multi-node or distributed training (by design).</li>
-  <li><strong>Tokenizer abstraction</strong>: Integrates existing Hugging Face tokenizers without custom pre-tokenization pipelines.</li>
-  <li><strong>Dataset modularity</strong>: Assumes datasets are loaded via Hugging Face for simplicity and portability.</li>
-</ul>
-
-<h2>Repository Link</h2>
-
-<p>The full codebase, setup instructions, and examples are available <a href="https://github.com/asantucci/language-model">here</a></p>
-
-</div>
-
-</div>
+<script>
+  (function () {
+    var nav = document.getElementById('primary-nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.nav-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>
 
 </body>
 </html>

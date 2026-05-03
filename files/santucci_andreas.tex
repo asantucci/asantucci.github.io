@@ -1,0 +1,218 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\usepackage[top=.35in, bottom=.35in, left=.5in, right=.5in]{geometry}
+
+% \addtolength{\oddsidemargin}{-0.5in}
+% \addtolength{\evensidemargin}{-0.5in}
+% \addtolength{\textwidth}{1in}
+% \addtolength{\topmargin}{-.5in}
+% \addtolength{\bottom}{-.5in}
+% \addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    #1 \vspace{-2pt}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{\raisebox{0.35ex}{\tiny$\bullet$}}
+\renewcommand{\labelitemi}{}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\hypersetup{colorlinks=true,urlcolor={blue}}
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Andreas Santucci} &
+\href{https://asantucci.github.io}{asantucci.github.io} \\
+Email: \href{mailto:santucci.andreas@gmail.com}{santucci.andreas@gmail.com} &
+Mobile: (650) 814 - 0024 \\
+\end{tabular*}
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {Granica}{Mountain View, Calif.}
+      {Research Scientist}{June 2025 - Present}
+      \resumeItemListStart
+        \resumeItem{\textbf{Predicting out of sample error in non-convex settings using Approximate Leave one Out} - \newline estimation of LOO Hessians via low rank updates of the full sample Hessian, masking eigen-directions associated with negative curvature in the LOO Hessian. Resulting prediction error for single index data generating processes with a mismatched Teacher-Student are within single digit percent error.}
+        \resumeItem{\textbf{Large Tabular Models} - incorporating column semantics and measuring dataset generalization via per-example permutation of columns.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Google}{Mountain View, Calif.}
+      {Research Software Engineer}{Apr. 2023 - June 2025}
+      \resumeItemListStart
+        \resumeItem{\textbf{Bard (Large Language Models)} - core contributor on \href{https://arxiv.org/pdf/2312.11805v4}{Gemini 1.5}.}
+        \resumeItem{\textbf{YouTube (Spatial Super Resolution)} - via Diffusion Transformers.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Google}{Mountain View, Calif.}
+      {Senior Data Scientist}{Nov. 2018 - Apr. 2023}
+        \resumeItemListStart
+          \resumeItem{\textbf{Designed recommendation algorithms for YouTube Shorts} - grew the product from zero to billions of users.}
+          \resumeItem{\textbf{Lead for Technical Infrastructure} - scaled YouTube Data Science team needs as we grew from 50 to 100 IC's.}
+        \resumeItemListEnd
+    \resumeSubheading
+      {Stanford University}{Stanford, Calif.}
+      {Lecturer (2017 - 2023); Teaching Fellow (2016-2017);
+        Teaching Assistant (2016)}{Jan. 2016 - Mar. 2023}
+      \resumeItemListStart
+        \resumeItem{\textbf{Earned "Annual Best Lecturer" award 3x} - award is determined by both students and departmental-faculty.}
+        \resumeItem{\textbf{Prepared and delivered lectures 2x/week}
+          for CME 211 and 212 (intro and advanced scientific
+          computing in Python and C++),
+          with classes of 80 graduate students in STEM
+          fields; managed a staff of four teaching assistants.
+        }
+          % Added to the core C++ curriculum RAII, move-semantics, templates, variadic arguments.}
+        \resumeItem{\textbf{Engineered an AutoGrader system} in
+          Python to
+          facilitate programmatic grading of students' computer
+          programs by fetching submissions % perform integration tests, assign meaningful feedback,
+          and generating an interpretable grade report.}
+        \resumeItem{\textbf{Synthesized lecture notes} for \href{https://stanford.edu/~rezab/classes/cme323/S17/}{CME 323}, a
+          course in parallel and distributed algorithms.} %, which are still in use today!}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Airbnb}{San Francisco, Calif.}
+      {Data Scientist}{Sep. 2018 - Nov. 2018}
+    \resumeSubheading
+      {Cardinal Analytx}{Palo Alto, Calif.}
+      {Data Scientist}{Aug. 2017 - Aug. 2018}
+      \resumeItemListStart
+        \resumeItem{\textbf{Modeled health insurance claims data}
+          using more than 80k features to predict a variety of
+          outcomes, including nominal responses and
+          orthopedic-joint surgeries. Built out the company's core product(s).}
+          % \textbf{Enabled estimation of any response using
+          %   claims data}, i.e. given a definition for a labeling
+          % function,
+          % our pipeline estimates the accuracy to which an insurer can predict
+          % the response of interest using their own claims data.}
+        \resumeItem{\textbf{Authored robust and extensible
+            production quality machine learning pipelines} enabling
+          state of the art results in a daily production
+          cycle, improving performance 50\% beyond a
+          \href{http://bmjopen.bmj.com/content/7/1/e011580}
+          {BMJ Open 2017 research paper}.} %Generic programming allow seamless use across insurers in healthcare.}
+        \resumeItem{\textbf{Lowered the memory footprint and compute
+            time} by an order
+          of magnitude.} % via sparse matrices; e.g. 80k features, 1/4M
+                        % patients, 1/2-dozen time periods - takes $<
+                        % 1$ hour and 24 GB RAM in R.}
+        % \resumeItem{\textbf{Engineered 80k features} and realized a
+        %   50\% improvement in core
+        %   model performance over the original
+        %   \href{http://bmjopen.bmj.com/content/7/1/e011580}
+        %   {BMJ Open research paper} published in 2017.}
+        \resumeItem{\textbf{Realized business value} by authoring both
+          a risk-based model for actuarial purposes,
+          outperforming state of the art compared with
+          \href{https://www.soa.org/research-reports/2016/2016-accuracy-claims-based-risk-scoring-models/}{SOA's
+            annual report},
+          and also predicting orthopedic-joint surgeries in effort to route
+          individuals from remote areas in Alaska and Washington to established
+          centers of excellence.}
+      \resumeItemListEnd
+    \resumeSubheading
+    {Lawrence Livermore National Lab}{Livermore, Calif.}
+    {Computational Engineering Intern}{Summer 2015}
+    \resumeItemListStart
+      \resumeItem{\textbf{Contributed} to \texttt{SparkPlug}, a
+        statistical project for Spark, written in
+        Scala. Implemented distributed MCMC, Bayesian updating methods
+        for use with conjugate priors, and relevant methods for
+        extracting sufficient statistics.}
+    \resumeItemListEnd
+    \resumeSubheading
+    {The Brattle Group}{San Francisco, Calif.}
+    {Research Analyst}{May 2012 - June 2014}
+    \resumeItemListStart
+      \resumeItem{\textbf{Wrote a spell-checker using regular expressions} to recover
+  thousands of GPS coordinates from a text-field on a proprietary
+  survey with an accuracy rate of 97\%.}
+      \resumeItem{\textbf{Used ArcGIS and Python} to combine various
+        data sources and examine spatial patterns along the U.S. coastline.}
+  % \textbf{Utilized ArcGIS, Python}, and disparate types of mapping data to
+  % estimate, from scratch, the miles of coastline within each US state
+  % (output was in consensus with NOAA estimates). Documented for use in
+  % expert testimony.}
+      \resumeItem{\textbf{Created and presented} eight R training sessions including parallel programming, web-scraping, and text mining.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Stanford University}{Stanford, Calif.}
+      {M.S., computational mathematics, 3.96}{Aug. 2014 -- June 2017}
+      \resumeItemListStart
+        \resumeItem{Capstone thesis with Guido Imbens: estimated
+          causal effects of night life on subsequent day sporting performance.}
+        \resumeItem{Passed ICME Ph.D. qualifying exams in both
+          stochastic processes as well as discrete mathematics and algorithms.}
+    \resumeItemListEnd
+    \resumeSubheading
+      {University of California, Berkeley}{Berkeley, Calif.}
+      {B.A., economics, 3.96}{Aug. 2010 -- May 2012}
+      \resumeItemListStart
+        \resumeItem{Highest Honors; thesis estimated causal effects
+          of NCAA D1 sports participation on academic success.}
+        \resumeItem{Student Athlete: ``walk-on'' for
+          the swim
+          and dive team, earned one of two spots on the diving travel
+          squad. NCAA team championships in 2011 and
+          2012.}
+        \resumeItem{Neufeld Scholar: highest cumulative GPA among all
+          student-athletes in 2012.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\end{document}
